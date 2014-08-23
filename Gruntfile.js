@@ -71,6 +71,16 @@ module.exports = function(grunt) {
 			}
 		},
 
+		concurrent: {
+			dev: [
+				'watch:js',
+				'watch:hbs'
+			],
+			options: {
+				logConcurrentOutput: true
+			}
+		},
+
 		watch: {
 			js: {
 				files: ['src/**/*', '!src/templates/**/*'],
@@ -81,10 +91,7 @@ module.exports = function(grunt) {
 			},
 			hbs: {
 				files: ['src/templates/**/*'],
-				tasks: ['clean', 'concat:dist', 'copy', 'emberTemplates'],
-				options: {
-					livereload: true,
-				}
+				tasks: ['concat:dist', 'copy', 'emberTemplates']
 			}
 		}
 	});
@@ -96,10 +103,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-ember-templates');
+	grunt.loadNpmTasks('grunt-concurrent');
 
 	grunt.registerTask('build', ['min', 'emberTemplates']);
 	grunt.registerTask('min', ['clean', 'concat', 'uglify', 'copy']);
-	grunt.registerTask('serve', ['connect', 'watch']);
+	grunt.registerTask('serve', ['connect', 'concurrent']);
 
 	grunt.registerTask('default', ['build', 'serve']);
 };

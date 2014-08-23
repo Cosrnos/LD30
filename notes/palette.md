@@ -3,7 +3,8 @@ Color Palette
 
 The palette is high energy and promotes excitement, likability and a humorous environment
 
-Background:
+http://www.colourlovers.com/palette/1458361/Sun_Rise
+
 	Tawny Peach - #fff4f1
 	polenta - #ffde7d
 	strong peach - #ffbe7d
