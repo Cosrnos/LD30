@@ -25,6 +25,4 @@ App.Router.map(function() {
 			});
 		});
 	});
-
-
 });

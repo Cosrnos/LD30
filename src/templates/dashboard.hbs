@@ -5,6 +5,7 @@
         {{#link-to "newStory"}}Add New Story{{/link-to}}
     </div>
 
+    <h4>Stories in Progress</h4>
     <ul>
     {{#each story in model.stories}}
         <li>{{story.title}}</li>
@@ -12,14 +13,21 @@
     </ul>
 </div>
 
-<div class="dashbaord-section team">
+<div class="dashboard-section team">
     <div>
         {{#link-to "hire"}}Hire New Team Member{{/link-to}}
     </div>
 
+    <h4>Current Team</h4>
     <ul>
     {{#each employee in model.employees}}
         <li>{{employee.name}} - {{employee.role}}</li>
     {{/each}}
     </ul>
+</div>
+
+<div class="dashboard-section pageviews">
+    <h4>Website Stats</h4>
+    <p>Pageviews: {{model.stats.pageviews}}</p>
+    <p>Pageviews graph will go here.</p>
 </div>

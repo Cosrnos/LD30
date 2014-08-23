@@ -1,5 +1,8 @@
 App.DashboardRoute = Ember.Route.extend({
     model: function() {
+        var stats = {
+            pageviews: 999
+        };
         var employees = [{
             name: "Brian",
             role: "writer"
@@ -17,6 +20,7 @@ App.DashboardRoute = Ember.Route.extend({
         }];
 
         return {
+            stats: stats,
             employees: employees,
             stories: stories
         };
