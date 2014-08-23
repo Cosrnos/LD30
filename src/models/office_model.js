@@ -1,4 +1,4 @@
-App.Office = Ember.Model.extend({
+App.Office = Ember.Object.extend({
 	employees: [],
 	currentProjects: [],
 	//Techie is special in that s/he effects the office as a whole.

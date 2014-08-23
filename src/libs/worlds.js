@@ -1,4 +1,4 @@
-Worlds = [{
+App.Worlds = [{
 	name: "Naruto",
 	google: 82000000,
 	popularity: 60,

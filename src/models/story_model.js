@@ -1,4 +1,4 @@
-App.Stories = Ember.Model.extend({
+App.Stories = Ember.Object.extend({
 	//Story Specifics
 	title: undefined,
 	rating: undefined,
