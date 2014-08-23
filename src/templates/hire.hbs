@@ -1,0 +1,24 @@
+<h4>Hire New Employees</h4>
+
+{{#each employee in model}}
+<hr>
+<div class="container employee">
+    <div><strong>Name:</strong> {{employee.name}}</div>
+    <div><strong>Weekly Salary:</strong> ${{cents_to_dollars employee.salary}}</div>
+    <div class="employee-attributes">
+        <div><string>Creativity:</strong> {{employee.creativity}}</div>
+        <div><string>Grammar:</strong> {{employee.grammar}}</div>
+        <div><string>Charisma:</strong> {{employee.charisma}}</div>
+        <div><string>Math:</strong> {{employee.math}}</div>
+        <div><string>Digital Dexterity:</strong> {{employee.digital_dexterity}}</div>
+    </div>
+    <div class="employee-notes">
+        <em>{{employee.name}} has contributed to {{employee.experience}} works of fiction.</em>
+    </div>
+    {{#if employee.hired}}
+    <div>On your team!</div>
+    {{else}}
+    <a href="#" {{action "add_employee" employee target="controller"}}>Add to Team</a>
+    {{/if}}
+</div>
+{{/each}}

@@ -2,6 +2,7 @@ App.Employee = Ember.Object.extend({
     name: undefined,
     gender: undefined,
     avatar: undefined,
+    hired: undefined,
     current_story: undefined,
 
     // List of worlds that interest this employee
@@ -11,8 +12,12 @@ App.Employee = Ember.Object.extend({
     level_artist: undefined,
     level_writer: undefined,
     level_editor: undefined,
-    level_promoterStories: undefined,
+    level_promoter: undefined,
     level_techie: undefined,
+
+    experience: function() {
+        return this.get('level_artist') + this.get('level_writer') + this.get('level_editor') + this.get('level_promoter') + this.get('level_techie');
+    }.property('level_artist', 'level_writer', 'level_editor', 'level_promoter', 'level_techie'),
 
     // Base Characteristics (initialized value between 1 and 20)
     base_creativity: undefined, // artist, writer
@@ -23,8 +28,8 @@ App.Employee = Ember.Object.extend({
 
     // Leveled Characteristics
     creativity: function() {
-        return this.get('base_creativity') + this.get('level_artist') + this.get('level_digital_dexterity');
-    }.property('base_creativity', 'level_artist', 'level_digital_dexterity'),
+        return this.get('base_creativity') + this.get('level_artist') + this.get('level_writer');
+    }.property('base_creativity', 'level_artist', 'level_writer'),
     grammar: function() {
         return this.get('base_grammar') + this.get('level_writer') + this.get('level_editor');
     }.property('base_grammar', 'level_writer', 'level_editor'),
@@ -44,12 +49,17 @@ App.Employee = Ember.Object.extend({
     salary: function() {
         var salary = 0;
 
-        salary += this.get('creativity') * 1700;
-        salary += this.get('grammar') * 1300;
-        salary += this.get('charisma') * 1800;
-        salary += this.get('math') * 1900
-        salary += this.get('digital_dexterity') * 1100;
+        salary += this.get('creativity') * 900;
+        salary += this.get('grammar') * 500;
+        salary += this.get('charisma') * 1000;
+        salary += this.get('math') * 1100
+        salary += this.get('digital_dexterity') * 300;
+
+        // Augment salary based on experience
+        if (this.get('experience') > 0) {
+            salary *= (this.get('experience') / 30 + 1);
+        }
 
         return salary;
-    }.property('creativity', 'grammar', 'charisma', 'math', 'digital_dexterity')
+    }.property('creativity', 'grammar', 'charisma', 'math', 'digital_dexterity', 'experience')
 });
