@@ -1,33 +1,51 @@
-<h3>Dashboard</h3>
+<h2>Dashboard</h2>
 
 <div class="dashboard-section stories">
-    <div>
-        {{#link-to "newStory"}}Add New Story{{/link-to}}
-    </div>
-
+    <h2>Stories</h2>
     <h4>Stories in Progress</h4>
+
     <ul>
     {{#each story in model.stories}}
         <li>{{story.title}}</li>
     {{/each}}
     </ul>
+
+    <div>
+        {{#link-to "newStory" class="btn btn-xlarge"}}Add New Story{{/link-to}}
+    </div>
 </div>
 
 <div class="dashboard-section team">
-    <div>
-        {{#link-to "hire"}}Hire New Team Member{{/link-to}}
-    </div>
+    <h2>Team</h2>
 
     <h4>Current Team</h4>
     <ul>
     {{#each employee in model.employees}}
-        <li>{{employee.name}} - {{employee.role}}</li>
+        <li class="dashboard-employee">
+            <table>
+            <tr>
+            <td>
+            <div class="icon"></div>
+            </td>
+            <td class="name">
+                <h5>{{employee.name}}</h5>
+                <h6>{{employee.role}}</h6>
+            </td>
+            </tr>
+            </table>
+         </li>
     {{/each}}
     </ul>
+
+    <div>
+        {{#link-to "hire" class="btn btn-xlarge"}}Hire New Team Member{{/link-to}}
+    </div>
 </div>
 
 <div class="dashboard-section pageviews">
-    <h4>Website Stats</h4>
+    <h2>Website Stats</h2>
     <p>Pageviews: {{model.stats.pageviews}}</p>
-    <p>Pageviews graph will go here.</p>
+    <canvas width="300" height="150">
+        Your browser doesn't support canvas which means you probably can't see this page anyway. I could say whatever I want about you. Your mother was a hamster and your father smells of elderberries
+    </canvas>
 </div>
