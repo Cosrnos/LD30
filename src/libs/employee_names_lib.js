@@ -77,7 +77,7 @@ App.EmployeeNames = {
             "Olivia",
             "Owen",
             "Phyllis",
-            "Rachael"
+            "Rachael",
             "Raquel",
             "Renee",
             "Robyn",
@@ -159,7 +159,7 @@ App.EmployeeNames = {
             "Joel",
             "John",
             "Jorge",
-            "Jose"
+            "Jose",
             "Keith",
             "Kristopher",
             "Lee",

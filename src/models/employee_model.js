@@ -1,4 +1,4 @@
-App.Employee = DS.Model.extend({
+App.Employee = Ember.Object.extend({
     name: undefined,
     gender: undefined,
     avatar: undefined,
