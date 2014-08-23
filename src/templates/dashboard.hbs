@@ -7,7 +7,13 @@
 
     <ul>
     {{#each story in model.stories}}
-        <li>{{story.title}}</li>
+        <li class="dashboard-story">
+            <h3>{{story.title}}</h3>
+            <div class="progress">
+                <div class="value" {{bind-attr style=story.progressStyle}}></div>
+            </div>
+            <h4>{{story.world1}} x {{story.world2}}</h4>
+        </li>
     {{/each}}
     </ul>
 
@@ -25,8 +31,10 @@
         <li class="dashboard-employee">
             <table>
             <tr>
-            <td>
-            <div class="icon"></div>
+            <td class="icon">
+                <div class="icon">
+
+                </div>
             </td>
             <td class="name">
                 <h5>{{employee.name}}</h5>

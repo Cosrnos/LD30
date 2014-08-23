@@ -40,7 +40,11 @@ header {
 #sidebar .spacer {
 	position: relative;
 	width: 80%;
-	margin: 60px auto;
+	margin: 5px auto;
+}
+
+#sidebar .spacer .logo {
+	margin-bottom: 20px;
 }
 
 #content {
@@ -74,10 +78,9 @@ header .stats {
 	margin-right: 50px;
 }
 
-header .stats > h1 {
-	line-height: 43px;
-	font-size: 24px;
-	vertical-align: bottom;
+header .stats > h2 {
+	margin-top: 10px;
+	font-size: 28px;
 }
 
 a.btn {
@@ -88,6 +91,7 @@ a.btn {
 	min-width: 200px;
 	max-width: 300px;
 	border: 3px solid #ff7d7d;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
 	margin-bottom: 20px;
 	font-size: 18px;
 	display: inline-block;
@@ -95,8 +99,9 @@ a.btn {
 }
 
 a.btn:hover {
-	background: transparent;
+	background: #ffffff;
 	color: #ff7d7d;
+	box-shadow: none;
 	border: 3px solid #ff7d7d;
 }
 
@@ -135,6 +140,42 @@ a.btn.btn-xlarge {
 	overflow-x: auto;
 }
 
+.dashboard-story {
+	list-style: none;
+	padding-left: 0px;
+	margin: 0px;
+	display: block;
+	padding: 10px 15px;
+	padding-right: -2px;
+	border: 2px solid #ff9d7d;
+	border-top: 0px;
+}
+
+.dashboard-story > h3 {
+	font-size: 16px;
+	display: block;
+	width: 95%;
+}
+
+.dashboard-story .progress {
+	width: 95%;
+	background: #666666;
+	height: 25px;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-story .progress .value {
+	background: #ff9d7d;
+	height: 100%;
+}
+
+.dashboard-story > h4 {
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+}
+
 .dashboard-employee {
 	list-style: none;
 	padding-left: 0px;
@@ -148,14 +189,38 @@ a.btn.btn-xlarge {
 
 .dashboard-employee > table {
 	margin: 0px;
+	width: 100%;
 	padding: 0px;
 }
 
+.logo > h1 {
+	font-size: 38px;
+	padding-bottom: 2px;
+	padding-left: 15px;
+	border-bottom: 10px solid #ff7d7d;
+}
+
 .dashboard-employee .icon {
+	width: 79px;
+}
+
+td.icon > div.icon {
 	background: #999999;
 	width: 64px;
 	height: 64px;
 	display: inline-block;
+}
+
+.dashboard-employee .name > h5 {
+	font-size: 16px;
+	border-bottom: 1px solid #ff9d7d;
+	display: block;
+	width: 95%;
+}
+
+.dashboard-employee .name > h6 {
+	font-size: 14px;
+	font-weight: normal;
 }
 
 .dashboard-section.pageviews {

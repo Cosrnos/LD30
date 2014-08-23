@@ -14,9 +14,15 @@ App.DashboardRoute = Ember.Route.extend({
             role: "artist"
         }];
         var stories = [{
-            title: "Story 1"
+            title: "Story 1",
+            world1: "Shrek",
+            world2: "Sonic",
+            progressStyle: "width: 50%"
         }, {
-            title: "Story 2"
+            title: "Story 2",
+            world1: "Teen Wolf",
+            world2: "Care Bears",
+            progressStyle: "width: 25%"
         }];
 
         return {
