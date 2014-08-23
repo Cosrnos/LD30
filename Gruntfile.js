@@ -74,14 +74,17 @@ module.exports = function(grunt) {
 		watch: {
 			js: {
 				files: ['src/**/*', '!src/templates/**/*'],
-				tasks: ['clean', 'concat', 'uglify', 'copy'],
+				tasks: ['concat:dist', 'copy'],
 				options: {
 					livereload: true,
 				}
 			},
 			hbs: {
 				files: ['src/templates/**/*'],
-				tasks: ['clean', 'concat', 'uglify', 'copy', 'emberTemplates']
+				tasks: ['clean', 'concat:dist', 'copy', 'emberTemplates'],
+				options: {
+					livereload: true,
+				}
 			}
 		}
 	});
@@ -94,7 +97,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-ember-templates');
 
-	grunt.registerTask('build', ['clean', 'concat', 'copy', 'emberTemplates']);
+	grunt.registerTask('build', ['min', 'emberTemplates']);
 	grunt.registerTask('min', ['clean', 'concat', 'uglify', 'copy']);
 	grunt.registerTask('serve', ['connect', 'watch']);
 
