@@ -1,0 +1,25 @@
+<h3>Dashboard</h3>
+
+<div class="dashboard-section stories">
+    <div>
+        {{#link-to "newStory"}}Add New Story{{/link-to}}
+    </div>
+
+    <ul>
+    {{#each story in model.stories}}
+        <li>{{story.title}}</li>
+    {{/each}}
+    </ul>
+</div>
+
+<div class="dashbaord-section team">
+    <div>
+        {{#link-to "hire"}}Hire New Team Member{{/link-to}}
+    </div>
+
+    <ul>
+    {{#each employee in model.employees}}
+        <li>{{employee.name}} - {{employee.role}}</li>
+    {{/each}}
+    </ul>
+</div>
