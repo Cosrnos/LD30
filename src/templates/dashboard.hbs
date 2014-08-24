@@ -37,9 +37,8 @@
                 </div>
             </td>
             <td class="name">
-                <h5>{{employee.name}}</h5>
+                <h5>{{employee.name}}{{#if employee.busy}} (Busy){{/if}}</h5>
                 <h6>{{employee.rank}}
-                    {{#if employee.busy}}(Busy){{/if}}
                     {{#if employee.techie}}(Techie) <a href="#" {{action 'unassign_techie' employee target="controller"}}>Unassign</a>{{/if}}
                 </h6>
             </td>

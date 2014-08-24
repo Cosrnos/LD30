@@ -1,0 +1,31 @@
+<ul class="team-list">
+	{{#each employee in controller.teamMembers itemViewClass="App.TeamMemberSelector"}}
+		<li {{bind-attr class=":team-list :employee employee.busy:busy:free"}}>
+			<table>
+				<tr>
+					<td class='icon'>
+						<div class="icon"></div>
+					</td>
+					<td class="team-list-employee-stats">
+						<h5>{{employee.name}}{{#if employee.busy}} (Busy){{/if}}</h5>
+						<span class="stat">
+							Creativity: {{employee.creativity}}
+						</span>
+						<span class="stat">
+							Grammar: {{employee.grammar}}
+						</span>
+						<span class="stat">
+							Organization: {{employee.charisma}}
+						</span>
+						<span class="stat">
+							Math: {{employee.math}}
+						</span>
+						<span class="stat">
+							Dexterity: {{employee.digital_dexterity}}
+						</span>
+					</td>
+				</tr>
+			</table>
+		</li>
+	{{/each}}
+</ul>
