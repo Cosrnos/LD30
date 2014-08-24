@@ -1,0 +1,9 @@
+{{#link-to 'dashboard' class="btn"}}
+    &laquo;&nbsp;Back to Dashboard
+{{/link-to}}
+
+<ul>
+{{#each story in model}}
+    <li>{{story.title}} - {{story.world1.name}} x {{story.world2.name}} {{#link-to 'viewStory' story}}view{{/link-to}}</li>
+{{/each}}
+</ul>

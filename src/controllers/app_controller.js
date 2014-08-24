@@ -7,6 +7,8 @@ App.AppController = Ember.ObjectController.extend({
 
 	_events: Em.A([]),
 
+	_views: 0,
+
 	init: function() {
 
 		this.tick();
@@ -61,8 +63,29 @@ App.AppController = Ember.ObjectController.extend({
 
 		if (past_stories) {
 			past_stories.forEach(function(item) {
-				// TODO: Update Age
+				item.incrementProperty('age');
 			});
+		}
+	},
+
+	_drawPageViews: function() {
+		var canv = document.getElementById('dashboard-canv') || document.createElement('canvas');
+		var stories = this.get('office.projects_past');
+		if (canv && stories) {
+
+			var views = 0;
+			stories.forEach(function(story) {
+				views += story.get('viewsThisDay');
+			});
+
+			this.set('_views', views);
+
+			var ctx = canv.getContext('2d');
+			var data = ctx.getImageData(0, 0, 500, 250);
+			ctx.clearRect(0, 0, 500, 250);
+			ctx.putImageData(data, -5, 0);
+			var off = 250 - Math.floor(views / 10);
+			ctx.fillRect(99 * 5, off, 5, Math.floor(views / 10));
 		}
 	},
 
@@ -79,6 +102,7 @@ App.AppController = Ember.ObjectController.extend({
 			this.get_pageview_income();
 			this._checkEvents();
 			this._updateStories();
+			this._drawPageViews();
 
 			if (day === 8) {
 				week += 1;

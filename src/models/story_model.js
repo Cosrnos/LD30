@@ -1,5 +1,6 @@
 App.Stories = Ember.Object.extend({
 	//Story Specifics
+	id: undefined,
 	title: undefined,
 	rating: undefined,
 	genre: undefined,
@@ -71,6 +72,7 @@ App.Stories = Ember.Object.extend({
 		var world1 = this.get('world1');
 		var world2 = this.get('world2');
 		var base = Math.ceil((world1.get('google') + world2.get('google')) / 1000000);
+		var followers = App.get('office.followers_total') || 0;
 		base = Math.max(base, 10);
 
 		var weirdBonus = world1.get('weirdness') + world2.get('weirdness');
