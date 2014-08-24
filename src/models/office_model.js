@@ -20,7 +20,9 @@ App.Office = Ember.Object.extend({
 	employees: Em.A([]),
 	employees_busy: Ember.computed.filterBy('employees', 'busy', true),
 	employees_available: Ember.computed.filterBy('employees', 'busy', false),
-
+	employees_sorted: function() {
+		return this.get('employees').sortBy('busy');
+	}.property('employees', 'employees.[]'),
 
 	projects_current: Em.A([]),
 	projects_past: Em.A([]),

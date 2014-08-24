@@ -4,7 +4,7 @@ App.HireView = Em.View.extend({
 		return this.get('currentIndex') === 0;
 	}.property('currentIndex'),
 	endOfList: function() {
-		return this.get('currentIndex') === this.get('controller.model.length') - 1;
+		return (this.get('currentIndex') === this.get('controller.model.length') - 1) || (this.get('controller.model.length') === 0);
 	}.property('currentIndex', 'controller.model.length'),
 	actions: {
 		prev: function() {
