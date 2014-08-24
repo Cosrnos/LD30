@@ -125,6 +125,31 @@ a.btn.btn-cancel {
 	border: 3px solid #ffa6a6;
 }
 
+a.btn.btn-small {
+	min-width: 0px;
+	max-width: 100px;
+	font-size: 16px;
+	padding: 3px 16px;
+}
+
+td.opts {
+	max-width: 25px;
+}
+
+td > a.btn.btn-red.btn-small.aj-fire-button {
+	margin: 0px;
+	padding: 16px 18px;
+	color: #ffffff;
+	background: #ffbe7d;
+	border: 3px solid #ffbe7d;
+	box-shadow: none;
+}
+
+td > a.btn.btn-red.btn-small.aj-fire-button:hover {
+	background: #ffffff;
+	color: #ffbe7d;
+}
+
 a.btn.btn-cancel:hover {
 	color: #ff7d7d;
 	border: 3px solid #ff7d7d;
