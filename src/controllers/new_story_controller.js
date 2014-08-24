@@ -88,10 +88,10 @@ App.NewStoryController = Ember.Controller.extend({
 
             newStory.set('criticRating', Math.ceil(criticRating));
             newStory.set('weirdness', Math.max(world1.get('weirdness'), world2.get('weirdness')));
+            newStory.generate_synopsis();
 
             office.get('currentProjects').pushObject(newStory);
 
-            debugger;
         }
     },
 
