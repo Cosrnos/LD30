@@ -32,6 +32,10 @@
     <div>
         {{#link-to "newStory" class="btn btn-xlarge" classNameBindings="controllers.app.office.employees_available.length:enabled:disabled"}}Add New Story{{/link-to}}
     </div>
+
+    {{#if controllers.app.office.projects_past}}
+        {{#link-to 'history'}}View Past Projects{{/link-to}}
+    {{/if}}
 </div>
 
 <div class="dashboard-section team">
