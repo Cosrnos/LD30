@@ -23,20 +23,30 @@ App.AppController = Ember.ObjectController.extend({
 
 			day++;
 
+			// Daily actions
+			this.get_pageview_income();
+
 			if (day === 8) {
 				week += 1;
 				day = 1;
+
+				// Weekly actions
+				this.payroll_and_rent();
 			}
 
 			if (week === 5) {
 				month += 1;
 				week = 1;
+
+				// Monthly actions
 				this.get_new_hiring_candidates();
 			}
 
 			if (month === 13) {
 				year += 1;
 				month = 1;
+
+				// Yearly actions
 			}
 
 			this.set('_day', day);
@@ -88,5 +98,32 @@ App.AppController = Ember.ObjectController.extend({
 			level_writer: Math.floor(Math.random() * App.Utils.get('config.ROLE_LEVEL_INIT_MAX')),
 			level_promoter: Math.floor(Math.random() * App.Utils.get('config.ROLE_LEVEL_INIT_MAX'))
 		});
+	},
+
+	// Calculate income from pageviews
+	get_pageview_income: function() {
+		var income = 0;
+
+		if (!this.get('office')) {
+			return;
+		}
+
+		_.each(this.get('office.projects_past'), function(story) {
+			income += (story.get('pageviews') * App.Utils.get('config.PAGEVIEW_CENTS'));
+		});
+
+		this.set('office.bank', this.get('office.bank') + income);
+	},
+
+	payroll_and_rent: function() {
+		var expenses;
+
+		if (!this.get('office')) {
+			return;
+		}
+
+		expensese = this.get('office.money_outgoing') || 0;
+
+		this.set('office.bank', this.get('office.bank') - expenses);
 	}
 });

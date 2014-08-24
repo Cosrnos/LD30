@@ -22,7 +22,8 @@ App.Office = Ember.Object.extend({
 	employees_available: Ember.computed.filterBy('employees', 'busy', false),
 
 
-	currentProjects: [],
+	projects_current: Em.A([]),
+	projects_past: Em.A([]),
 
 	//Techie is special in that s/he effects the office as a whole.
 	employee_techies: Ember.computed.filterBy('employees', 'techie', true),
@@ -59,6 +60,8 @@ App.Office = Ember.Object.extend({
 		return uptime;
 	}.property('techie'),
 
+	// Finances
+	bank: 0,
 	cost_of_rent: function() {
 		return this.rent[this.get('level')];
 	}.property('level'),
