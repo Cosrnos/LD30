@@ -12,8 +12,8 @@ App.Office = Ember.Object.extend({
 	level: 1,
 
 	employees: Em.A([]),
-	employees_busy: Ember.computed.filter('employees', 'busy', true),
-	employess_available: Ember.computed.filter('employees', 'busy', false),
+	employees_busy: Ember.computed.filterBy('employees', 'busy', true),
+	employess_available: Ember.computed.filterBy('employees', 'busy', false),
 
 	currentProjects: [],
 	//Techie is special in that s/he effects the office as a whole.
