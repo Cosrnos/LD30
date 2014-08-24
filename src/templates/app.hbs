@@ -17,6 +17,14 @@
 				<li>TB: {{followers_tweetbook}}</li>
 				<li>W: {{followers_wumbler}}</li>
 			</ul>
+			<h2>Office</h2>
+			<ul>
+				<li>Rent: ${{cents_to_dollars office.cost_of_rent}}</li>
+				<li>Employees: {{office.employees.length}}</li>
+				<li>Capacity: {{office.level}}</li>
+				<li><a href="#" {{action "upgrade" target="office"}}>Upgrade Office</a></li>
+				<li><a href="#" {{action "downgrade" target="office"}}>Downgrade Office</a></li>
+			</ul>
 		</div>
 	</div>
 	<div id="content">

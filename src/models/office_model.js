@@ -5,9 +5,11 @@ App.Office = Ember.Object.extend({
 		2: 20000,
 		3: 40000,
 		4: 70000,
-		5: 120000,
-		6: 200000,
-		7: 340000
+		5: 100000,
+		6: 150000,
+		7: 240000,
+		8: 330000,
+		9: 420000
 	},
 	level: 1,
 
@@ -19,13 +21,15 @@ App.Office = Ember.Object.extend({
 	//Techie is special in that s/he effects the office as a whole.
 	techie: undefined,
 
-
+	cost_of_rent: function() {
+		return this.rent[this.get('level')];
+	}.property('level'),
 	money_incoming: function() {
 		return 0;
 	}.property(),
 	money_outgoing: function() {
 		var employees = this.get('employees');
-		var rent = this.rent[this.get('level')];
+		var rent = this.get('cost_of_rent');
 		var salaries = 0;
 
 		_.each(employees, function(employee) {
@@ -35,7 +39,7 @@ App.Office = Ember.Object.extend({
 		});
 
 		return salaries + rent;
-	}.property('employees.@each.salaries', 'level')
+	}.property('employees.@each.salaries', 'cost_of_rent')
 });
 
 //App.Office.table = 'office';
