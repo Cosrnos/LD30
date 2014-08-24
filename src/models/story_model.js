@@ -1,5 +1,6 @@
 App.Stories = Ember.Object.extend({
 	//Story Specifics
+	id: undefined,
 	title: undefined,
 	rating: undefined,
 	genre: undefined,

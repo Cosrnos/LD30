@@ -9,6 +9,7 @@ App.Router.map(function() {
 		this.resource('story', {
 			path: '/story'
 		}, function() {
+			this.resource('history');
 			this.resource('newStory', {
 				path: '/new'
 			}, function() {});
