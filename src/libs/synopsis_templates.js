@@ -13,7 +13,8 @@ App.SynopsisTemplates = {
     ],
     'horror': [],
     'kids': [
-        "Sometimes it takes a special cat to get people back on course. {character1} meets a sassy feline, who just happens to belong to {character2}. Two families come together at {location1} to enjoy each other's gifts - and a suprise appearance of {prop2} forces them to work together."
+        "Sometimes it takes a special cat to get people back on course. {character1} meets a sassy feline, who just happens to belong to {character2}. Two families come together at {location1} to enjoy each other's gifts - and a suprise appearance of {prop2} forces them to work together.",
+        "{character1} has to learn to live again after losing the family in an accident. {character1} draws strength to move forward when {character2} and a lovable pup take {character1} to {location2} for a renewed lesson in the power of faith."
     ],
     'mystery': [],
     'paranormal teen romance': [],
