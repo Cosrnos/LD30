@@ -41,6 +41,23 @@
                 <h6>{{employee.rank}}
                     {{#if employee.techie}}(Techie) <a href="#" {{action 'unassign_techie' employee target="controller"}}>Unassign</a>{{/if}}
                 </h6>
+                <div class="dashboard-employee-stats">
+                <span class="stat">
+                    Creativity: {{employee.creativity}}
+                </span>
+                <span class="stat">
+                    Grammar: {{employee.grammar}}
+                </span>
+                <span class="stat">
+                    Organization: {{employee.charisma}}
+                </span>
+                <span class="stat">
+                    Math: {{employee.math}}
+                </span>
+                <span class="stat">
+                    Dexterity: {{employee.digital_dexterity}}
+                </span>
+                </div>
             </td>
             {{#unless employee.you}}
                 {{#unless employee.busy}}

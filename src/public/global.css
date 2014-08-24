@@ -132,7 +132,7 @@ a.btn.btn-small {
 }
 
 td.opts {
-	max-width: 50px;
+	max-width: 200px;
 }
 
 td > a.btn.btn-small.aj-fire-button {
@@ -424,7 +424,7 @@ div.role-choice.selected > a.btn.remove-btn {
 	padding: 0px;
 }
 
-.team-list-employee-stats > span.stat {
+span.stat {
 	display: inline-block;
 	margin-right: 15px;
 	margin-left: 5px;
@@ -437,4 +437,10 @@ div.role-choice.selected > a.btn.remove-btn {
 .btn-create{
 	margin-top: 50px;
 	width: 100%;
+}
+
+.dashboard-employee-stats > span.stat{
+	font-size: 12px;
+	margin-left: 0px;
+	margin-right: 5px;
 }
