@@ -2,9 +2,9 @@ App.Employee = Ember.Object.extend({
     name: undefined,
     gender: undefined,
     avatar: undefined,
-    hired: undefined,
-    busy: undefined,
-    current_story: undefined,
+    you: false,
+    hired: false,
+    busy: false,
 
     // List of worlds that interest this employee
     interests_worlds: undefined,

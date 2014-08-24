@@ -29,7 +29,9 @@ App.Office = Ember.Object.extend({
 		var salaries = 0;
 
 		_.each(employees, function(employee) {
-			salaries += employee.get('salary');
+			if (!employee.get('you')) {
+				salaries += employee.get('salary');
+			}
 		});
 
 		return salaries + rent;

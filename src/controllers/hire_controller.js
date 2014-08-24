@@ -3,8 +3,9 @@ App.HireController = Ember.ArrayController.extend({
     actions: {
         add_employee: function(employee) {
             var office = this.get('controllers.app.office');
+            var total_space = office.get('level') + 1;
 
-            if (office.get('level') > office.get('employees.length')) {
+            if (total_space > office.get('employees.length')) {
                 employee.set('hired', true);
                 office.get('employees').addObject(employee);
             } else {
