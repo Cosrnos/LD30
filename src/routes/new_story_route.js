@@ -13,7 +13,6 @@ App.NewStoryRoute = Ember.Route.extend({
 
         office = controller.get('controllers.app.office');
         controller.set('availableTeam', office.get('employees_available'));
-        c = controller;
     }
 
 });
@@ -25,7 +24,6 @@ App.NewStoryController = Ember.Controller.extend({
     chosenTeam: function() {
         var newStory = this.get('newStory');
         var team = [];
-        debugger;
         if (newStory.author) {
             team.addObject(newStory.author);
         }
@@ -69,6 +67,14 @@ App.NewStoryController = Ember.Controller.extend({
         cancelPromoter: function() {
             var newStory = this.get('newStory');
             newStory.set('promoter', undefined);
+        },
+
+        createStory: function() {
+            var newStory = this.get('newStory');
+            var world1 = newStory.get('world1');
+            var world2 = newStory.get('world2');
+
+
         }
     },
 
@@ -85,6 +91,7 @@ App.WorldChoiceView = Em.View.extend({
         var selected = this.get('selected');
 
         //If it's already selected, unselect it.  Else, select it.
+        //debugger;
         if (selected) {
             if (newStory.get('world1') === world) {
                 newStory.set('world1', undefined);
@@ -92,7 +99,7 @@ App.WorldChoiceView = Em.View.extend({
                 return;
             }
             if (newStory.get('world2') === world) {
-                newStory.set('world2', world);
+                newStory.set('world2', undefined);
                 this.set('selected', false);
                 return;
             }
