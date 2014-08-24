@@ -4,6 +4,9 @@ App.AppController = Ember.ObjectController.extend({
 	_month: 1,
 	_week: 1,
 	_day: 0,
+
+	_events: Em.A([]),
+
 	init: function() {
 
 		this.tick();
@@ -13,6 +16,55 @@ App.AppController = Ember.ObjectController.extend({
 	date: function() {
 		return "day " + this.get('_day') + " | week " + this.get('_week') + " | month " + this.get('_month') + " | year " + this.get('_year');
 	}.property('_day'),
+
+	scheduleEvent: function(context, callback, days) {
+		var eventObj = {
+			schedule: days,
+			callback: callback,
+			context: context
+		};
+
+		this.get('_events').addObject(eventObj);
+	},
+
+	_checkEvents: function() {
+		var toRemove = [];
+
+		this.get('_events').forEach(function(item, index) {
+			item.days = item.days - 1;
+			if (item.days === 0) {
+				item.callback.bind(item.context)();
+				toRemove.push(index);
+			}
+		});
+
+		_.each(toRemove, function(index) {
+			this.get('_events').removeAt(index);
+		});
+	},
+
+	_updateStories: function() {
+		var current_stories = this.get('office.projects_current');
+		var past_stories = this.get('office.projects_past')
+		if (current_stories) {
+			current_stories.forEach(function(item) {
+				var amt = item.progress + item.progressInterval;
+				if (item.progress < 100) {
+					if (amt > 100) {
+						amt = 100;
+					}
+
+					item.set('progress', amt);
+				}
+			});
+		}
+
+		if (past_stories) {
+			past_stories.forEach(function(item) {
+				// TODO: Update Age
+			});
+		}
+	},
 
 	tick: function() {
 		if (!this.get('paused')) {
@@ -25,6 +77,8 @@ App.AppController = Ember.ObjectController.extend({
 
 			// Daily actions
 			this.get_pageview_income();
+			this._checkEvents();
+			this._updateStories();
 
 			if (day === 8) {
 				week += 1;

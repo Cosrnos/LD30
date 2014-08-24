@@ -5,20 +5,32 @@
     <h2>Stories</h2>
     <h4>Stories in Progress</h4>
 
+    {{#if controllers.app.office.projects_current}}
     <ul>
-    {{#each story in model.stories}}
+    {{#each story in controllers.app.office.projects_current}}
         <li class="dashboard-story">
             <h3>{{story.title}}</h3>
             <div class="progress">
                 <div class="value" {{bind-attr style=story.progressStyle}}></div>
             </div>
-            <h4>{{story.world1}} x {{story.world2}}</h4>
+            <h4>{{story.world1.name}} x {{story.world2.name}}</h4>
+            {{#if story.ready}}
+                <a href="#" class='btn btn-finish' {{action 'finish_story' story}}>
+                    Finish!
+                </a>
+            {{/if}}
         </li>
     {{/each}}
     </ul>
-
+    {{else}}
+        <ul>
+            <li class='dashboard-story'>
+                You don't have any stories at the moment :(
+            </li>
+        </ul>
+    {{/if}}
     <div>
-        {{#link-to "newStory" class="btn btn-xlarge"}}Add New Story{{/link-to}}
+        {{#link-to "newStory" class="btn btn-xlarge" classNameBindings="controllers.app.office.employees_available.length:enabled:disabled"}}Add New Story{{/link-to}}
     </div>
 </div>
 

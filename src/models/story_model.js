@@ -6,6 +6,18 @@ App.Stories = Ember.Object.extend({
 	world1: undefined,
 	world2: undefined,
 	synopsis: undefined,
+	progress: 0,
+	_done: false,
+
+	progressInterval: App.Utils.get('config.STORY_PROGRESS_INTERVAL'),
+
+	progressStyle: function() {
+		return 'width: ' + this.get('progress') + "%";
+	}.property('progress'),
+
+	ready: function() {
+		return this.get('progress') >= 100;
+	}.property('progress'),
 
 	//Role Slots
 	author: undefined,
@@ -18,6 +30,10 @@ App.Stories = Ember.Object.extend({
 	weirdness: 0,
 	views: 0,
 	wordCount: undefined,
+
+	done: function() {
+		return (this.get('progress') >= 100 && this.get('_done'));
+	}.property('progress', '_done'),
 
 	createStory: function() {
 		//Roles, Worlds and Genre must be selected.

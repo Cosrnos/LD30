@@ -430,6 +430,18 @@ span.stat {
 	margin-left: 5px;
 }
 
+a.btn.btn-finish {
+	display: block;
+	width: 50%;
+	margin: 00 auto;
+	padding-left: 0px;
+	padding-right: 0px;
+	max-width: none;
+	background: #ffffff;
+	border-color: #ff9d7d;
+	color: #ff9d7d;
+}
+
 .team-list.employee.busy {
 	background: rgba(168,168,168,0.25);
 }

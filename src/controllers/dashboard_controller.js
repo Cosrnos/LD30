@@ -24,6 +24,36 @@ App.DashboardController = Ember.ObjectController.extend({
         unassign_techie: function(employee) {
             employee.set('busy', false);
             employee.set('techie', false);
+        },
+        finish_story: function(story) {
+            var author = story.get('author');
+            var editor = story.get('editor');
+            var artist = story.get('artist');
+            var promoter = story.get('promoter');
+
+            if (author) {
+                author.set('busy', false);
+                //Apply stats
+            }
+
+            if (editor) {
+                editor.set('busy', false);
+                //apply stats
+            }
+
+            if (artist) {
+                artist.set('busy', false);
+                //apply stats
+            }
+
+            if (promoter) {
+                promoter.set('busy', false);
+                //apply stats
+            }
+
+            story.set('_done', true);
+
+            console.log('Synopsis: ' + story.get('synopsis'));
         }
     }
 });

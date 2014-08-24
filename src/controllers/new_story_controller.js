@@ -70,6 +70,7 @@ App.NewStoryController = Ember.Controller.extend({
             var author = newStory.get('author');
             var editor = newStory.get('editor');
             var artist = newStory.get('artist');
+            var promoter = newStory.get('promoter');
 
             var office = this.get('controllers.app.office');
             var editorMuliplier = 1;
@@ -90,8 +91,26 @@ App.NewStoryController = Ember.Controller.extend({
             newStory.set('weirdness', Math.max(world1.get('weirdness'), world2.get('weirdness')));
             newStory.generate_synopsis();
 
-            office.get('currentProjects').pushObject(newStory);
+            office.get('projects').addObject(newStory);
 
+            // Make everyone busy
+            if (author) {
+                author.set('busy', true);
+            }
+
+            if (editor) {
+                editor.set('busy', true);
+            }
+
+            if (artist) {
+                artist.set('busy', true);
+            }
+
+            if (promoter) {
+                promoter.set('busy', true);
+            }
+
+            this.transitionToRoute('dashboard');
         }
     },
 

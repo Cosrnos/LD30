@@ -24,8 +24,9 @@ App.Office = Ember.Object.extend({
 		return this.get('employees').sortBy('busy');
 	}.property('employees', 'employees.[]'),
 
-	projects_current: Em.A([]),
-	projects_past: Em.A([]),
+	projects: Em.A([]),
+	projects_current: Ember.computed.filterBy('projects', 'done', false),
+	projects_past: Ember.computed.filterBy('projects', 'done', true),
 
 	//Techie is special in that s/he effects the office as a whole.
 	employee_techies: Ember.computed.filterBy('employees', 'techie', true),
