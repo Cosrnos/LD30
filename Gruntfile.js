@@ -15,7 +15,8 @@ module.exports = function(grunt) {
 				src: ['vendor/jquery-1.10.2.js',
 					'vendor/handlebars-1.1.2.js',
 					'vendor/ember-1.5.1.js',
-					'vendor/**/*.js'
+					'vendor/**/*.js',
+					'src/public/select2/select2.js'
 				],
 				dest: 'dist/js/<%= pkg.name %>.vendor.js'.toLowerCase()
 			}

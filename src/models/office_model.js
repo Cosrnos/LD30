@@ -9,11 +9,12 @@ App.Office = Ember.Object.extend({
 		6: 200000,
 		7: 340000
 	},
+
 	level: 1,
 
 	employees: Em.A([]),
-	employees_busy: Ember.computed.filter('employees', 'busy', true),
-	employess_available: Ember.computed.filter('employees', 'busy', false),
+	employees_busy: Ember.computed.filterBy('employees', 'busy', true),
+	employees_available: Ember.computed.filterBy('employees', 'busy', false),
 
 	currentProjects: [],
 	//Techie is special in that s/he effects the office as a whole.
@@ -36,6 +37,7 @@ App.Office = Ember.Object.extend({
 
 		return salaries + rent;
 	}.property('employees.@each.salaries', 'level')
+
 });
 
 //App.Office.table = 'office';

@@ -16,6 +16,10 @@ App.Employee = Ember.Object.extend({
     level_promoter: undefined,
     level_techie: undefined,
 
+    // init: function() {
+    //     this.set('busy', false);
+    // },
+
     experience: function() {
         return this.get('level_artist') + this.get('level_writer') + this.get('level_editor') + this.get('level_promoter') + this.get('level_techie');
     }.property('level_artist', 'level_writer', 'level_editor', 'level_promoter', 'level_techie'),

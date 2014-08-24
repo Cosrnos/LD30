@@ -2,7 +2,7 @@ App.Worlds = [{
 	name: "Naruto",
 	google: 82000000,
 	popularity: 60,
-	wierdness: 0.07,
+	weirdness: 0.01,
 	genre: ['action', 'adventure'],
 	medium: 'manga',
 	characters: ['Naruto', 'Sasuke', 'Sakura', 'Hinata', 'Kakashi', 'Orochimaru', 'Gaara'],
@@ -12,7 +12,7 @@ App.Worlds = [{
 	name: "Star Wars",
 	google: 1460000000,
 	popularity: 90,
-	wierdness: 0.02,
+	weirdness: 0.02,
 	genre: ['sci-fi', 'adventure'],
 	medium: 'movie',
 	characters: ['Han Solo', 'Luke', 'Chewbacka', 'General Grievous', 'Mace Windu', 'Princess Leah', 'Amidala'],
@@ -21,10 +21,29 @@ App.Worlds = [{
 }, {
 	name: "Star Trek: The Next Generation",
 	popularity: 16400000,
-	wierdness: 0.03,
+	google: 16400000,
+	weirdness: 0.03,
 	genre: ['sci-fi'],
 	medium: 'TV',
 	characters: ['Worf', 'Data', 'Jean Luc Picard', 'Wesley', 'Q', 'Counselor Troi', 'Dr. Crusher', 'Belana Troi', 'Guinan'],
 	locations: ['Star Fleet Academy', 'Wolf 359', 'Betazed', 'Delta Quadrent', 'The Q Continuum', "Qo'noS"],
 	props: ['tricorder', 'phaser', 'cloaking device', 'dilithium crystal', 'Borg technology']
+}, {
+	name: "Muppet Babies",
+	popularity: 762000,
+	weirdness: 0.6,
+	genre: ['comedy'],
+	medium: 'cartoon',
+	characters: ['Nanny', 'Baby Fozzie Bear', 'Baby Piggy', 'Baby Gonzo', 'Baby Rowlf'],
+	locations: ['the nursery', 'Doorknob World'],
+	props: ['imagination', 'old toys', "Nanny's socks"]
+}, {
+	name: "The Wonder Years",
+	popularity: 747000,
+	weirdness: 0.6,
+	genre: ['drama'],
+	medium: 'TV',
+	characters: ['Kevin Arnold', 'Winnie Cooper', 'Paul Joshua Pfeiffer', 'Wayne Arnold'],
+	locations: ["Winnie's beddroom", "Lincoln Junior High", "McKinley High School", "NORCOM"],
+	props: ['first car', 'first kiss', 'first fight']
 }];
