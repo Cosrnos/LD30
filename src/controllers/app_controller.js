@@ -13,13 +13,6 @@ App.AppController = Ember.ObjectController.extend({
 	date: function() {
 		return "day " + this.get('_day') + " | week " + this.get('_week') + " | month " + this.get('_month') + " | year " + this.get('_year');
 	}.property('_day'),
-	money: '$1,000',
-	outflow: '-$1,000/mo',
-	level: 5,
-	facespace: 1693,
-	tweetbook: 1213,
-	wumbler: 8530,
-
 
 	tick: function() {
 		if (!this.get('paused')) {
@@ -54,7 +47,11 @@ App.AppController = Ember.ObjectController.extend({
 		Ember.run.later(this, this.tick, App.Utils.get('config.DAY_LENGTH'));
 	},
 
-	total: function() {
-		return this.get('facespace') + this.get('tweetbook') + this.get('wumbler');
-	}.property('facespace', 'tweetbook', 'wumbler')
+	// Social
+	followers_facespace: 1693,
+	followers_tweetbook: 1213,
+	followers_wumbler: 8530,
+	followers_total: function() {
+		return this.get('followers_facespace') + this.get('followers_tweetbook') + this.get('followers_wumbler');
+	}.property('followers_facespace', 'followers_tweetbook', 'followers_wumbler')
 });

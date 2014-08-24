@@ -27,7 +27,22 @@
 
     <h4>Current Team</h4>
     <ul>
-    {{#each employee in model.employees}}
+        <li class="dashboard-employee">
+            <table>
+            <tr>
+            <td class="icon">
+                <div class="icon">
+
+                </div>
+            </td>
+            <td class="name">
+                <h5>{{controllers.app.you.name}}</h5>
+                <h6>{{controllers.app.you.rank}} + The Boss</h6>
+            </td>
+            </tr>
+            </table>
+        </li>
+    {{#each employee in controllers.app.office.employees}}
         <li class="dashboard-employee">
             <table>
             <tr>
@@ -38,7 +53,7 @@
             </td>
             <td class="name">
                 <h5>{{employee.name}}</h5>
-                <h6>{{employee.role}}</h6>
+                <h6>{{employee.rank}}</h6>
             </td>
             </tr>
             </table>

@@ -7,15 +7,15 @@
 			<h1>Stats</h1>
 			<h2>Basic</h2>
 			<ul>
-				<li>{{money}}</li>
-				<li>{{outflow}}</li>
-				<li>{{level}}</li>
+				<li>${{cents_to_dollars office.money_incoming}} per week</li>
+				<li>${{cents_to_dollars office.money_outgoing}} per week</li>
+				<li>{{office.level}}</li>
 			</ul>
-			<h2>{{total}} Followers</h2>
+			<h2>{{followers_total}} Followers</h2>
 			<ul>
-				<li>FS: {{facespace}}</li>
-				<li>TB: {{tweetbook}}</li>
-				<li>W: {{wumbler}}</li>
+				<li>FS: {{followers_facespace}}</li>
+				<li>TB: {{followers_tweetbook}}</li>
+				<li>W: {{followers_wumbler}}</li>
 			</ul>
 		</div>
 	</div>

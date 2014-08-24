@@ -3,6 +3,7 @@ App.Employee = Ember.Object.extend({
     gender: undefined,
     avatar: undefined,
     hired: undefined,
+    busy: undefined,
     current_story: undefined,
 
     // List of worlds that interest this employee
@@ -18,6 +19,27 @@ App.Employee = Ember.Object.extend({
     experience: function() {
         return this.get('level_artist') + this.get('level_writer') + this.get('level_editor') + this.get('level_promoter') + this.get('level_techie');
     }.property('level_artist', 'level_writer', 'level_editor', 'level_promoter', 'level_techie'),
+
+    rank: function() {
+        var exp = this.get('experience');
+        var title;
+
+        if (!exp || exp < 5) {
+            title = 'Total Noob';
+        } else if (exp >= 5 && exp < 20) {
+            title = 'Novice Fanfictionalist';
+        } else if (exp >= 20 && exp < 50) {
+            title = 'Established Author of Fanfiction';
+        } else if (exp >= 50 && exp < 200) {
+            title = 'Established Author of Fanfiction';
+        } else if (exp >= 200 && exp < 1000) {
+            title = 'Hemmingway of Crossover'
+        } else if (exp >= 1000) {
+            title = 'Crossover God';
+        }
+
+        return title;
+    }.property('experience'),
 
     // Base Characteristics (initialized value between 1 and 20)
     base_creativity: undefined, // artist, writer
