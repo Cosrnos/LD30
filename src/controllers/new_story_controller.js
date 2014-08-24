@@ -67,7 +67,7 @@ App.NewStoryController = Ember.Controller.extend({
             var world1 = newStory.get('world1');
             var world2 = newStory.get('world2');
 
-
+            newStory.generate_synopsis();
         }
     },
 

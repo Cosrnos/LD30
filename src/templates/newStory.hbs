@@ -101,7 +101,7 @@
 				</div>
 				{{/if}}
 
-				{{#if controller.showCreateButton}} <a href='#' class="btn btn-large btn-create">Create Story</a>{{/if}}
+				{{#if controller.showCreateButton}} <a href='#' class="btn btn-large btn-create" {{action 'createStory' target="controller"}}>Create Story</a>{{/if}}
 			</td>
 			<td valign="top">
 				<h3>Team Members</h3>
