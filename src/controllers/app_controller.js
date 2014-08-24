@@ -102,15 +102,13 @@ App.AppController = Ember.ObjectController.extend({
 
 	// Calculate income from pageviews
 	get_pageview_income: function() {
-		var income = 0;
+		var income;
 
 		if (!this.get('office')) {
 			return;
 		}
 
-		_.each(this.get('office.projects_past'), function(story) {
-			income += (story.get('pageviews') * App.Utils.get('config.PAGEVIEW_CENTS'));
-		});
+		income = this.get('office.money_incoming') || 0;
 
 		this.set('office.bank', this.get('office.bank') + income);
 	},
@@ -122,7 +120,7 @@ App.AppController = Ember.ObjectController.extend({
 			return;
 		}
 
-		expensese = this.get('office.money_outgoing') || 0;
+		expenses = this.get('office.money_outgoing') || 0;
 
 		this.set('office.bank', this.get('office.bank') - expenses);
 	}
