@@ -1,24 +1,56 @@
 <h4>Hire New Employees</h4>
 
-{{#each employee in model}}
-<hr>
-<div class="container employee">
-    <div><strong>Name:</strong> {{employee.name}}</div>
-    <div><strong>Weekly Salary:</strong> ${{cents_to_dollars employee.salary}}</div>
-    <div class="employee-attributes">
-        <div><string>Creativity:</strong> {{employee.creativity}}</div>
-        <div><string>Grammar:</strong> {{employee.grammar}}</div>
-        <div><string>Charisma:</strong> {{employee.charisma}}</div>
-        <div><string>Math:</strong> {{employee.math}}</div>
-        <div><string>Digital Dexterity:</strong> {{employee.digital_dexterity}}</div>
+<div class="hire-employee container">
+    {{#each employee in model}}
+    <div class="hire-employee employee">
+    <table>
+        <tr>
+            <td class="hire-employee icon">
+                <div class="icon">
+                </div>
+            </td>
+            <td class="hire-employee info">
+                <div><strong>Name:</strong> {{employee.name}}</div>
+                <div><strong>Weekly Salary:</strong> ${{cents_to_dollars employee.salary}}</div>
+                <div class="employee-attributes">
+                    <div class="stat"><strong>Creativity:</strong> <span class="value">{{employee.creativity}}</span></div>
+                    <div class="stat"><strong>Grammar:</strong> <span class="value">{{employee.grammar}}</span></div>
+                    <div class="stat"><strong>Charisma:</strong> <span class="value">{{employee.charisma}}</span></div>
+                    <div class="stat"><strong>Math:</strong> <span class="value">{{employee.math}}</span></div>
+                    <div class="stat"><strong>Digital Dexterity:</strong> <span class="value">{{employee.digital_dexterity}}</span></div>
+                </div>
+                <div class="employee-notes">
+                    <em>{{employee.name}} has contributed to {{employee.experience}} works of fiction.</em>
+                </div>
+                {{#if employee.hired}}
+                <div>On your team!</div>
+                {{else}}
+                <a href="#" class="btn" style="margin-top: 40px;"{{action "add_employee" employee target="controller"}}>Hire</a>
+                {{/if}}
+            </td>
+        </tr>
+        </table>
     </div>
-    <div class="employee-notes">
-        <em>{{employee.name}} has contributed to {{employee.experience}} works of fiction.</em>
+    {{/each}}
+    <div class="hire-employee employee">
+        <table>
+            <tr>
+                <td>
+                    <h2>That's it</h2>
+                    <h3>Come back later to see new candidates!</h3>
+                </td>
+            </tr>
+        </table>
     </div>
-    {{#if employee.hired}}
-    <div>On your team!</div>
-    {{else}}
-    <a href="#" {{action "add_employee" employee target="controller"}}>Add to Team</a>
-    {{/if}}
 </div>
-{{/each}}
+    <table style="width: 89%; margin: 00 auto;">
+        <tr>
+            <td style="width: 50%">
+                <a href='#' id="aj-prev-button" {{bind-attr class=":btn :btn-xlarge view.startOfList:disabled:enabled"}} style="cursor: pointer;" {{action 'prev' target='view'}}>Previous Candidate</a>
+            </td>
+            <td style="width: 50%">
+                <a href='#' id="aj-next-button" {{bind-attr class=":btn :btn-xlarge view.endOfList:disabled:enabled"}} style="cursor: pointer;" {{action 'next' target='view'}}>Next Candidate</a>
+            </td>
+        </tr>
+    </table>
+    <a href='#' id="aj-next-button" class="btn btn-cancel btn-xlarge" style="cursor: pointer;" {{action 'cancel' target='controller'}}>Stop Looking</a>

@@ -12,6 +12,12 @@ App.HireController = Ember.ArrayController.extend({
                 alert("Sorry! Your office is full. You'll have to expand your office or let go of some staff before hiring more people.");
             }
 
+            Ember.run.later(this, function() {
+                this.transitionToRoute('dashboard');
+            }, 1000);
+        },
+        cancel: function() {
+            this.transitionToRoute('dashboard');
         }
     }
 });

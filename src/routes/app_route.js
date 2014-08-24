@@ -17,8 +17,10 @@ App.AppRoute = Ember.Route.extend({
         });
 
         return {
-            office: App.Office.create({
-                employees: Em.A([you])
+            office: App.OfficeController.create({
+                content: App.Office.create({
+                    employees: Em.A([you])
+                })
             }),
             stats: []
         };

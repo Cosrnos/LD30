@@ -40,6 +40,11 @@
                 <h5>{{employee.name}}</h5>
                 <h6>{{employee.rank}}</h6>
             </td>
+            {{#unless employee.you}}
+            <td class="opts">
+                    <a href='#' {{action 'fire' employee target='controller'}} class="btn btn-small btn-red aj-fire-button">✗ Fire</a>
+            </td>
+            {{/unless}}
             </tr>
             </table>
          </li>

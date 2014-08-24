@@ -7,15 +7,22 @@
 			<h1>Stats</h1>
 			<h2>Basic</h2>
 			<ul>
-				<li>${{cents_to_dollars office.money_incoming}} per week</li>
-				<li>${{cents_to_dollars office.money_outgoing}} per week</li>
-				<li>{{office.level}}</li>
+				<li>Proceeds: ${{cents_to_dollars office.money_incoming}} per week</li>
+				<li>Expenses: ${{cents_to_dollars office.money_outgoing}} per week</li>
 			</ul>
 			<h2>{{followers_total}} Followers</h2>
 			<ul>
 				<li>FS: {{followers_facespace}}</li>
 				<li>TB: {{followers_tweetbook}}</li>
 				<li>W: {{followers_wumbler}}</li>
+			</ul>
+			<h2>Office</h2>
+			<ul>
+				<li>Rent: ${{cents_to_dollars office.cost_of_rent}}</li>
+				<li>Employees: {{office.employees.length}}</li>
+				<li>Capacity: {{office.capacity}}</li>
+				<li><a href="#" {{action "upgrade" target="office"}}>Upgrade Office</a></li>
+				<li><a href="#" {{action "downgrade" target="office"}}>Downgrade Office</a></li>
 			</ul>
 		</div>
 	</div>
