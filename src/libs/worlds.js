@@ -1,7 +1,7 @@
 App.Worlds = Em.A([
 	Ember.Object.create({
 		name: "Naruto",
-		google: 82000000,
+		google: 76000000,
 		popularity: 70,
 		weirdness: 0.01,
 		genre: ['action', 'adventure'],
@@ -12,7 +12,7 @@ App.Worlds = Em.A([
 		fuckingWat: false
 	}), Ember.Object.create({
 		name: "Star Wars",
-		google: 1460000000,
+		google: 72000000,
 		popularity: 95,
 		weirdness: 0.02,
 		genre: ['sci-fi', 'adventure'],
@@ -75,6 +75,18 @@ App.Worlds = Em.A([
 		characters: ['Winnie-the-Pooh', 'Piglet', 'Tigger', 'Christopher Robin', 'Eeyore', 'Hephalumps'],
 		locations: ["The Hundred Acre Wood", "Six Pine Trees", "Where The Woozle Wasn't", "Pooh Corner", "Owl's House"],
 		props: ['honey', 'Pooh Sticks', 'the North Pole', "Hephalumps"],
+		fuckingWat: true
+	}),
+	Ember.Object.create({
+		name: "Harry Potter",
+		google: 9810000,
+		popularity: 20,
+		weirdness: 0.02,
+		genre: ['comedy', 'kids', 'adnedture', 'fantasy', ],
+		medium: 'book',
+		characters: ['Harry Potter', 'Hagrid', 'Snape', 'Dobby', 'Petunia Dursley', 'Moaning Myrtle', 'Voldemort'],
+		locations: ["Diagon Alley", "Hogwartz", "Privet Drive", "The Ministry of Magic", "The Chamber of Secrets"],
+		props: ['the snitch', "horcrux", "invisibility cloak", "the elder wand", "the Whomping Willow"],
 		fuckingWat: false
 	})
 ]);
