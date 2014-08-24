@@ -12,6 +12,9 @@ App.Office = Ember.Object.extend({
 		9: 420000
 	},
 	level: 1,
+	capacity: function() {
+		return this.get('level') + 1;
+	}.property('level'),
 
 	employees: Em.A([]),
 	employees_busy: Ember.computed.filterBy('employees', 'busy', true),

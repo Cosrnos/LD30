@@ -11,13 +11,14 @@ App.OfficeController = Ember.ObjectController.extend({
         },
         downgrade: function() {
             var employees = this.get('employees.length');
-            var level = this.get('level');
-            var space_available = level + 1;
+            var capacity = this.get('capacity');
 
-            if (level > 1 && employees < space_available) {
-                this.set('level', level - 1);
-            } else {
+            if (capacity <= 2) {
+                alert("Sorry! You can't downgrade your office you need some room for an employee!");
+            } else if (employees >= capacity) {
                 alert("Sorry! You can't downgrade your office because you're at capacity. You have to let some staff go to free up space first!");
+            } else {
+                this.set('level', capacity - 2);
             }
         }
     }
