@@ -21,6 +21,7 @@
 				<li>Rent: ${{cents_to_dollars office.cost_of_rent}}</li>
 				<li>Employees: {{office.employees.length}}</li>
 				<li>Capacity: {{office.capacity}}</li>
+				<li>Current Techie: {{#if office.techie}}{{office.techie.name}}{{else}}Nobody assigned!{{/if}}</li>
 				<li><a href="#" {{action "upgrade" target="office"}}>Upgrade Office</a></li>
 				<li><a href="#" {{action "downgrade" target="office"}}>Downgrade Office</a></li>
 			</ul>
