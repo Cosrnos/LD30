@@ -67,7 +67,31 @@ App.NewStoryController = Ember.Controller.extend({
             var world1 = newStory.get('world1');
             var world2 = newStory.get('world2');
 
-            newStory.generate_synopsis();
+            var author = newStory.get('author');
+            var editor = newStory.get('editor');
+            var artist = newStory.get('artist');
+
+            var office = this.get('controllers.app.office');
+            var editorMuliplier = 1;
+            //Calculate critic rating.
+            var criticBase = 2 * author.get('creativity') + author.get('grammar');
+            if (editor) {
+                criticBase += (2 * editor.get('grammar'));
+                var editorMuliplier = 1 + (1 * (2 / Math.PI)) * Math.atan(.05 * editor.get('charisma'));
+            }
+            if (artist) {
+                criticBase += artist.get('creativity') + 2 * artist.get('digital_dexterity');
+            }
+
+            //THis function has a horizontal asymtote at 100.
+            var criticRating = (100 * (2 / Math.PI)) * Math.atan(.020 * (criticBase * editorMuliplier));
+
+            newStory.set('criticRating', Math.ceil(criticRating));
+            newStory.set('weirdness', Math.max(world1.get('weirdness'), world2.get('weirdness')));
+
+            office.get('currentProjects').pushObject(newStory);
+
+            debugger;
         }
     },
 

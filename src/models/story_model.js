@@ -15,7 +15,7 @@ App.Stories = Ember.Object.extend({
 
 	//Stats
 	criticRating: undefined,
-	readerRating: undefined,
+	weirdness: 0,
 	views: 0,
 	wordCount: undefined,
 
