@@ -33,6 +33,7 @@ App.Stories = Ember.Object.extend({
 
 	age: 0, //In game days
 	totalView: 0,
+	wentViral: false,
 
 	done: function() {
 		return (this.get('progress') >= 100 && this.get('_done'));
@@ -64,25 +65,46 @@ App.Stories = Ember.Object.extend({
 	},
 
 	viewsThisDay: function() {
+		var viralBonus = 0;
 		var age = this.get('age');
 		var criticRating = this.get('criticRating');
 		var world1 = this.get('world1');
 		var world2 = this.get('world2');
 		var base = Math.ceil((world1.get('google') + world2.get('google')) / 1000000);
 		base = Math.max(base, 10);
-		var dayOne = (followers / 10) * criticRating + (75 * Math.pow(base, 0.75));
+
+		var weirdBonus = world1.get('weirdness') + world2.get('weirdness');
+		if (xor(world1.get('weirdness'), world2.get('weirdness'))) {
+			weirdBonus += .25;
+		}
+		//The weirdBonus is bound between 1.5 and 0.85
+		weirdBonus = Math.min(1.5, Math.max(weirdBonus, 0.85));
+
+		var dayOne = ((followers / 10) * criticRating + (base * Math.pow(base, 0.75))) * weirdBonus;
 
 		if (age === 7) {
 			if (criticRating <= 10) {
 				if (world1.get('fuckingWat') || world2.get('fuckingWat')) {
-					var goViral = Math.random() > .9;
+					if (Math.random() > .9) {
+						this.set('wentViral', true)
+					}
 				}
 			}
 		}
 
-		return Math.ceil(dayOne / (0.75 * age));
+		if (this.get('wentViral')) {
+			viralBonus = ((followers / 10) * 80 + (base * 1.5 * Math.pow(base, 0.75))) * (weirdBonus * weirdBonus);
+			viralBonus = Math.ceil(viralBonus / (0.95 * (age - 7)));
+		}
+
+		return Math.ceil(dayOne / (0.75 * age)) + viralBonus;
 
 	}.property('age'),
+
+	followersThisDay: function() {
+		var todayViews = this.get('viewsThisDay');
+		return (criticRating * todayViews * .05) / (40);
+	}.property('viewsThisDay')
 
 
 });

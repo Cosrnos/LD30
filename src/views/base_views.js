@@ -1,3 +1,7 @@
+function xor(x, y) {
+    return (x || y) && !(x && y);
+}
+
 //Extends Em.Select to be a Select2 Box.
 App.SelectField = Ember.Select.extend({
     init: function() {
