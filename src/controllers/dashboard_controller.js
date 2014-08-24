@@ -20,6 +20,10 @@ App.DashboardController = Ember.ObjectController.extend({
             // Assign new techie
             employee.set('busy', true);
             employee.set('techie', true);
+        },
+        unassign_techie: function(employee) {
+            employee.set('busy', false);
+            employee.set('techie', false);
         }
     }
 });
