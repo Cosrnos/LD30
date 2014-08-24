@@ -1,5 +1,18 @@
 App.NewStoryController = Ember.Controller.extend({
     needs: ['app'],
+    showExtra: Ember.computed.and('hasMultipleFree', 'newStory.author'),
+
+    teamMembers: function() {
+        return this.get('controllers.app.office.employees_sorted');
+    }.property('controllers.app.office.employees_sorted'),
+
+    teamLength: function() {
+        return this.get('controllers.app.office.employees_sorted.length');
+    }.property('controllers.app.office.employees_sorted.length'),
+
+    hasMultipleFree: function() {
+        return this.get('controllers.app.office.employees_available.length') > 1;
+    }.property('controllers.app.office.employees_available.length'),
 
     chosenTeam: function() {
         var newStory = this.get('newStory');

@@ -37,18 +37,35 @@
                 </div>
             </td>
             <td class="name">
-                <h5>{{employee.name}}</h5>
-                <h6>{{employee.rank}} {{#if employee.techie}}(Techie){{/if}}</h6>
+                <h5>{{employee.name}}{{#if employee.busy}} (Busy){{/if}}</h5>
+                <h6>{{employee.rank}}
+                    {{#if employee.techie}}(Techie) <a href="#" {{action 'unassign_techie' employee target="controller"}}>Unassign</a>{{/if}}
+                </h6>
+                <div class="dashboard-employee-stats">
+                <span class="stat">
+                    Creativity: {{employee.creativity}}
+                </span>
+                <span class="stat">
+                    Grammar: {{employee.grammar}}
+                </span>
+                <span class="stat">
+                    Organization: {{employee.charisma}}
+                </span>
+                <span class="stat">
+                    Math: {{employee.math}}
+                </span>
+                <span class="stat">
+                    Dexterity: {{employee.digital_dexterity}}
+                </span>
+                </div>
             </td>
             {{#unless employee.you}}
                 {{#unless employee.busy}}
                 <td class="opts">
-                    <a href='#' {{action 'assign_techie' employee target='controller'}} class="btn btn-small">✗ Make Techie</a>
+                    <a href='#' {{action 'assign_techie' employee target='controller'}} class="btn btn-small aj-techie-button">Make Techie</a>
+                    <a href='#' {{action 'fire' employee target='controller'}} class="btn btn-small btn-red aj-fire-button">✗ Fire</a>
                 </td>
                 {{/unless}}
-                <td class="opts">
-                        <a href='#' {{action 'fire' employee target='controller'}} class="btn btn-small btn-red aj-fire-button">✗ Fire</a>
-                </td>
             {{/unless}}
             </tr>
             </table>

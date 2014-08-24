@@ -20,9 +20,12 @@ App.Office = Ember.Object.extend({
 	employees: Em.A([]),
 	employees_busy: Ember.computed.filterBy('employees', 'busy', true),
 	employees_available: Ember.computed.filterBy('employees', 'busy', false),
+	employees_sorted: function() {
+		return this.get('employees').sortBy('busy');
+	}.property('employees', 'employees.[]'),
 
-
-	currentProjects: [],
+	projects_current: Em.A([]),
+	projects_past: Em.A([]),
 
 	//Techie is special in that s/he effects the office as a whole.
 	employee_techies: Ember.computed.filterBy('employees', 'techie', true),
@@ -59,12 +62,18 @@ App.Office = Ember.Object.extend({
 		return uptime;
 	}.property('techie'),
 
+	// Finances
+	bank: 50000,
 	cost_of_rent: function() {
 		return this.rent[this.get('level')];
 	}.property('level'),
 	money_incoming: function() {
-		return 0;
-	}.property(),
+		var income = 0;
+		_.each(this.get('projects_past'), function(story) {
+			income += (story.get('pageviews') * App.Utils.get('config.PAGEVIEW_CENTS'));
+		});
+		return income;
+	}.property('projects_past.@each.pageviews'),
 	money_outgoing: function() {
 		var employees = this.get('employees');
 		var rent = this.get('cost_of_rent');
