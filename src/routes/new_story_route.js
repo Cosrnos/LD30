@@ -7,13 +7,11 @@ App.NewStoryRoute = Ember.Route.extend({
     // },
 
     setupController: function(controller, model) {
-
-        controller.set('worldChoices', _.sample(App.Worlds, 3));
-        controller.set('newStory', App.Stories.create({
-            id: (new Date().getTime())
-        }));
-
         var office = controller.get('controllers.app.office');
+
+        controller.set('worldChoices', _.sample(App.Worlds, 3 + office.get('employees.length')));
+        controller.set('newStory', App.Stories.create());
+
         controller.set('availableTeam', office.get('employees_available'));
     }
 

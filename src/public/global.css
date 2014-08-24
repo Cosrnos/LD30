@@ -272,7 +272,6 @@ td.icon > div.icon {
 }
 
 .dashboard-section.pageviews {
-	width: 95%;
 	margin-right: 0px;
 	margin-left: 0px;
 	clear: both;
@@ -280,8 +279,6 @@ td.icon > div.icon {
 
 .dashboard-section.pageviews > canvas {
 	background: #ffffff;
-	width: 100%;
-	height: 25vh;
 	margin-bottom: 25px;
 }
 

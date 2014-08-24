@@ -32,6 +32,9 @@ App.Stories = Ember.Object.extend({
 	views: 0,
 	wordCount: undefined,
 
+	age: 0, //In game days
+	totalView: 0,
+
 	done: function() {
 		return (this.get('progress') >= 100 && this.get('_done'));
 	}.property('progress', '_done'),
@@ -59,7 +62,30 @@ App.Stories = Ember.Object.extend({
 		template = template.replace(/{prop2}/g, props[1]);
 
 		this.set('synopsis', template);
-	}
+	},
+
+	viewsThisDay: function() {
+		var age = this.get('age');
+		var criticRating = this.get('criticRating');
+		var world1 = this.get('world1');
+		var world2 = this.get('world2');
+		var base = Math.ceil((world1.get('google') + world2.get('google')) / 1000000);
+		var followers = App.get('office.followers_total') || 0;
+		base = Math.max(base, 10);
+		var dayOne = (followers / 10) * criticRating + (75 * Math.pow(base, 0.75));
+
+		if (age === 7) {
+			if (criticRating <= 10) {
+				if (world1.get('fuckingWat') || world2.get('fuckingWat')) {
+					var goViral = Math.random() > .9;
+				}
+			}
+		}
+
+		return Math.ceil(dayOne / (0.75 * age));
+
+	}.property('age'),
+
 
 });
 
