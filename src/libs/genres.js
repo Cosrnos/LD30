@@ -2,6 +2,7 @@
  	'comedy',
  	'drama',
  	'horror',
+ 	'kids',
  	'mystery',
  	'paranormal teen romance',
  	'police procedural',

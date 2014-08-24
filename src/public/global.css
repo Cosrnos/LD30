@@ -129,25 +129,32 @@ a.btn.btn-small {
 	min-width: 0px;
 	max-width: 100px;
 	font-size: 16px;
-	padding: 3px 16px;
 }
 
 td.opts {
-	max-width: 25px;
+	max-width: 50px;
 }
 
-td > a.btn.btn-red.btn-small.aj-fire-button {
+td > a.btn.btn-small.aj-fire-button {
 	margin: 0px;
-	padding: 16px 18px;
 	color: #ffffff;
 	background: #ffbe7d;
 	border: 3px solid #ffbe7d;
-	box-shadow: none;
+	display:block;
+	max-width: none;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
-td > a.btn.btn-red.btn-small.aj-fire-button:hover {
+td > a.btn.btn-small.aj-fire-button:hover {
 	background: #ffffff;
 	color: #ffbe7d;
+}
+
+td > a.btn.btn-small.aj-techie-button {
+	margin: 0px;
+	display:block;
+	max-width: none;
 }
 
 a.btn.btn-cancel:hover {
@@ -314,4 +321,79 @@ td.icon > div.icon {
 	max-height: 250px;
 }
 
+.world-choices {
+	width: 80%;
+}
 
+.world-choice {
+	float:left;
+	max-width: 45%;
+	margin: 5px;
+	padding: 20px 50px;
+	border-radius: 10px;
+	background: #ffffff;
+	border: 2px solid #ff7d7d;
+	color: #ff7d7d;
+	cursor: pointer;
+}
+
+.world-selected {
+	background: #ff7d7d;
+	color: #ffffff;
+}
+
+.team-choices{
+
+}
+.team-choice {
+	width: 10vw;
+	height:64px;
+}
+.team-hover {
+
+}
+.role-choices {
+	width: 25vw;
+}
+.role-choice {
+	box-sizing: border-box;
+	display: block;
+}
+
+
+.role-select{
+	width: 12vw;
+}
+
+.new-story input[type=text] {
+	width: 80%;
+	font-size: 28px;
+	border: 5px solid #ff9d7d;
+	padding: 20px 15px;
+	border-radius: 20px;
+	outline: none;
+}
+
+.role-choice.selected{
+	font-size: 24px;
+}
+
+div.role-choice.selected > a.btn.remove-btn {
+	font-size: 12px;
+	min-width: 0px;
+	margin: 0px;
+	vertical-align: middle;
+	margin-bottom: 2px;
+	padding: 3px;
+}
+
+.new-story.choice-container {
+	width: 80%;
+	margin-top: 20px;
+}
+
+.new-story.choice-container > td {
+	width: 50%;
+}
+
+.new-story.

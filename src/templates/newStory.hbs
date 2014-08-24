@@ -1,54 +1,11 @@
-
-New Story!<br>
-<style type="text/css">
-.world-choices {
-	width: 25vw;
-	border: 1px solid black;
-}
-.world-choice {
-	box-sizing: border-box;
-	float:left;
-	width: 12.5vw;
-	border: 1px solid black;
-	padding: 4px;
-}
-
-.world-selected {
-	background-color: yellow;
-}
-
-.team-choices{
-
-}
-.team-choice {
-	border: 1px solid black;
-	width: 10vw;
-	height:64px;
-}
-.team-hover {
-
-}
-.role-choices {
-	width: 25vw;
-	border: 1px solid black;
-}
-.role-choice {
-	box-sizing: border-box;
-	float:left;
-	width: 12.5vw;
-	height: 56px;
-	border: 1px solid black;
-}
-.role-select{
-	width: 12vw;
-}
-</style>
+<div class="new-story">
 {{#with newStory}}
 	<div>{{view Ember.TextField valueBinding="title" type="text" placeholder="Title"}}</div>
 	<div>
+		<h3>What genre is this story?</h3>
 		{{view App.SelectField valueBinding="genre"
 			contentBinding="App.Genres"
-			prompt= "Select Genre..."
+			prompt= "Select Genre...."
 		}}
 	</div>
 	<h3>Select Two Worlds to Crossover</h3>
@@ -60,79 +17,93 @@ New Story!<br>
 		{{/each}}
 		<div style="clear:left"></div>
 	</div>
-	<h3>Select Team Members</h3>
-	<div class="role-choices">
-		<div class="role-choice">
-			Author<br>
-			{{#if author}}
-				{{author.name}}
-				<button {{action "cancelAuthor"}}>Cancel</button>
-			{{else}}
-				{{view App.SelectField
-					selection = author
-					contentBinding="controller.myAvailableTeam"
-					optionLabelPath="content.name"
-					prompt= "Select Writer..."
-					class="role-select"
-				}}
-			{{/if}}
-		</div>
-		<div class="role-choice">
-			Editor<br>
-			{{#if editor}}
-				{{editor.name}}
-				<button {{action "cancelEditor"}}>Cancel</button>
-			{{else}}
-				{{view App.SelectField
-					selection = editor
-					contentBinding="controller.myAvailableTeam"
-					optionLabelPath="content.name"
-					prompt= "Select Editor..."
-					class="role-select"
-				}}
-			{{/if}}
-		</div>
-		<div class="role-choice">
-			Artist<br>
-			{{#if artist}}
-				{{artist.name}}
-				<button {{action "cancelArtist"}}>Cancel</button>
-			{{else}}
-			{{view App.SelectField
-				selection = artist
-				contentBinding="controller.myAvailableTeam"
-				optionLabelPath="content.name"
-				prompt= "Select Artist..."
-				class="role-select"
-			}}
-			{{/if}}
-		</div>
-		<div class="role-choice">
-			Promoter<br>
-			{{#if promoter}}
-				{{editor.promoter}}
-				<button {{action "cancelPromoter"}}>Cancel</button>
-			{{else}}
-				{{view App.SelectField
-					selection = promoter
-					contentBinding="controller.myAvailableTeam"
-					optionLabelPath="content.name"
-					prompt= "Select Promoter..."
-					class="role-select"
-				}}
-			{{/if}}
-		</div>
-	</div>
-	<div style="clear:left"></div>
-	<h3>Available Team Members</h3>
-	<div class="team-choices">
-		{{#each controller.myAvailableTeam itemViewClass="App.TeamMemberSelector"}}
-			<div class="icon"></div>
-			{{name}}<br>
-			Creativity: {{creativity}}
-		{{/each}}
-	</div>
+	<table class="new-story choice-container">
+		<tr>
+			<td style="width: 40%;">
+				<h3>Who's writing this story?</h3>
+				<div class="role-choice">
+					{{#if author}}
+							<div class="role-choice selected">
+							{{author.name}}
+							<a href='#' class="btn remove-btn" {{action "cancelAuthor"}}>Remove</a>
+						</div>
+					{{else}}
+						{{view App.SelectField
+							selection = author
+							contentBinding="controller.myAvailableTeam"
+							optionLabelPath="content.name"
+							prompt= "Select Writer..."
+							class="role-select"
+						}}
+					{{/if}}
+				</div>
+				<div style="clear: left; height: 50px; width: 100%;"></div>
+				<h3>Who else should work on this story?</h3>
+				<h4>(optional)</h4>
+				<div class="role-choices">
+					<div class="role-choice">
+						Editor<br>
+						{{#if editor}}
+							{{editor.name}}
+							<button {{action "cancelEditor"}}>Cancel</button>
+						{{else}}
+							{{view App.SelectField
+								selection = editor
+								contentBinding="controller.myAvailableTeam"
+								optionLabelPath="content.name"
+								prompt= "Select Editor..."
+								class="role-select"
+							}}
+						{{/if}}
+					</div>
+					<div class="role-choice">
+						Artist<br>
+						{{#if artist}}
+							<div class="role-choice selected">
+								{{artist.name}}
+								<button {{action "cancelArtist"}}>Cancel</button>
+							</div>
+						{{else}}
+						{{view App.SelectField
+							selection = artist
+							contentBinding="controller.myAvailableTeam"
+							optionLabelPath="content.name"
+							prompt= "Select Artist..."
+							class="role-select"
+						}}
+						{{/if}}
+					</div>
+					<div class="role-choice">
+						Promoter<br>
+						{{#if promoter}}
+							{{editor.promoter}}
+							<button {{action "cancelPromoter"}}>Cancel</button>
+						{{else}}
+							{{view App.SelectField
+								selection = promoter
+								contentBinding="controller.myAvailableTeam"
+								optionLabelPath="content.name"
+								prompt= "Select Promoter..."
+								class="role-select"
+							}}
+						{{/if}}
+					</div>
+				</div>
+			</td>
+			<td>
+				<h3>Available Team Members</h3>
+				<div class="team-choices">
+					{{#each controller.myAvailableTeam itemViewClass="App.TeamMemberSelector"}}
+						<div class="icon"></div>
+						{{name}}<br>
+						Creativity: {{creativity}}
+					{{/each}}
+				</div>
+			</td>
+		</tr>
+	</table>
 
 {{/with}}
 
 {{#if showCreateButton}} <button> DO IT!</button>{{/if}}
+</div>

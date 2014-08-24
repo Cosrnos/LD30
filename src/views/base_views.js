@@ -62,7 +62,7 @@ App.SelectField = Ember.Select.extend({
         var self = this;
         var new_value;
         var emitChange = true;
-        debugger;
+
         if (this.valueBinding) {
             new_value = self.get('value');
         }
