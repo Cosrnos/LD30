@@ -53,6 +53,11 @@ App.AppController = Ember.ObjectController.extend({
 			this.set('_week', week);
 			this.set('_month', month);
 			this.set('_year', year);
+
+			// Too far in the red?
+			if (this.check_balance()) {
+				alert("Sorry dawg, your crushing debt has ruined your life. Your dreams of a crossover fanfiction empire are dead.");
+			}
 		}
 
 		Ember.run.later(this, this.tick, App.Utils.get('config.DAY_LENGTH'));
@@ -123,5 +128,13 @@ App.AppController = Ember.ObjectController.extend({
 		expenses = this.get('office.money_outgoing') || 0;
 
 		this.set('office.bank', this.get('office.bank') - expenses);
+	},
+
+	check_balance: function() {
+		if (!this.get('office')) {
+			return false;
+		}
+
+		return (this.get('office.bank') < -2000000);
 	}
 });

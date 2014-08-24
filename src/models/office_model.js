@@ -61,7 +61,7 @@ App.Office = Ember.Object.extend({
 	}.property('techie'),
 
 	// Finances
-	bank: 0,
+	bank: 50000,
 	cost_of_rent: function() {
 		return this.rent[this.get('level')];
 	}.property('level'),
