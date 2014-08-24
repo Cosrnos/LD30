@@ -40,13 +40,15 @@
                 <h5>{{employee.name}}</h5>
                 <h6>{{employee.rank}}</h6>
             </td>
-            <td class="opts">
-                <a href='#' {{action 'assign_techie' employee target='controller'}} class="btn btn-small">✗ Make Techie</a>
-            </td>
             {{#unless employee.you}}
-            <td class="opts">
-                    <a href='#' {{action 'fire' employee target='controller'}} class="btn btn-small btn-red aj-fire-button">✗ Fire</a>
-            </td>
+                {{#unless employee.busy}}
+                <td class="opts">
+                    <a href='#' {{action 'assign_techie' employee target='controller'}} class="btn btn-small">✗ Make Techie</a>
+                </td>
+                {{/unless}}
+                <td class="opts">
+                        <a href='#' {{action 'fire' employee target='controller'}} class="btn btn-small btn-red aj-fire-button">✗ Fire</a>
+                </td>
             {{/unless}}
             </tr>
             </table>
