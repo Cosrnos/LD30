@@ -23,8 +23,41 @@ App.Office = Ember.Object.extend({
 
 
 	currentProjects: [],
+
 	//Techie is special in that s/he effects the office as a whole.
-	techie: undefined,
+	employee_techies: Ember.computed.filterBy('employees', 'techie', true),
+	techie: function() {
+		return this.get('employee_techies').objectAt(0);
+	}.property('employee_techies.[]'),
+	website_uptime: function() {
+		if (!this.get('techie')) {
+			return 0.50;
+		}
+
+		var techie = this.get('techie');
+		var skill = techie.get('math') + techie.get('digital_dexterity');
+		var uptime;
+
+		if (!skill || skill < 10) {
+			uptime = 0.50;
+		} else if (skill >= 10 && skill < 20) {
+			uptime = 0.65;
+		} else if (skill >= 20 && skill < 25) {
+			uptime = 0.75;
+		} else if (skill >= 25 && skill < 30) {
+			uptime = 0.83;
+		} else if (skill >= 30 && skill < 40) {
+			uptime = 0.90;
+		} else if (skill >= 40 && skill < 50) {
+			uptime = 0.95
+		} else if (skill >= 50 && skill < 60) {
+			uptime = 0.98;
+		} else if (skill >= 60) {
+			uptime = 0.9999;
+		}
+
+		return uptime;
+	}.property('techie'),
 
 	cost_of_rent: function() {
 		return this.rent[this.get('level')];

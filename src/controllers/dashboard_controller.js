@@ -14,11 +14,12 @@ App.DashboardController = Ember.ObjectController.extend({
 
             if (previous_techie) {
                 previous_techie.set('busy', false);
+                previous_techie.set('techie', false);
             }
 
             // Assign new techie
-            this.set('controllers.app.office.techie', employee);
             employee.set('busy', true);
+            employee.set('techie', true);
         }
     }
 });

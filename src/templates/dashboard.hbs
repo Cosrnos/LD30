@@ -38,7 +38,7 @@
             </td>
             <td class="name">
                 <h5>{{employee.name}}</h5>
-                <h6>{{employee.rank}}</h6>
+                <h6>{{employee.rank}} {{#if employee.techie}}(Techie){{/if}}</h6>
             </td>
             {{#unless employee.you}}
                 {{#unless employee.busy}}
