@@ -69,6 +69,7 @@ App.Stories = Ember.Object.extend({
 		var world1 = this.get('world1');
 		var world2 = this.get('world2');
 		var base = Math.ceil((world1.get('google') + world2.get('google')) / 1000000);
+		var followers = App.get('office.followers_total') || 0;
 		base = Math.max(base, 10);
 		var dayOne = (followers / 10) * criticRating + (75 * Math.pow(base, 0.75));
 
