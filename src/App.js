@@ -4,6 +4,9 @@ App.Router.map(function() {
 	this.resource('app', {
 		path: '/'
 	}, function() {
+		this.resource('index', {
+			path: '/'
+		});
 		this.resource('dashboard');
 
 		this.resource('story', {
