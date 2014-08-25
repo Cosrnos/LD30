@@ -165,5 +165,81 @@ App.Worlds = Em.A([
 		characters: ["Jack O'Neill", "Teal'c", "Samantha Carter", "Daniel Jackson", " Janet Fraiser", "Apophis"],
 		locations: ['Pegasus Galaxy', "Othala", "Goa'uld Pleasure Palace", "Abydos", "Cheyenne Mountain Complex", "the Stargate Control Room"],
 		props: ['Naqahdah', 'Zero Point Module', "a Goa'uld symbiote", "a Sarcophagus", "another Stargate"]
+	}),
+	Ember.Object.create({
+		"name": "Teenage Mutant Ninja Turtles",
+		"google": 24000000,
+		"popularity": 65,
+		"weirdness": 0.08,
+		"genre": ["action", "adventure"],
+		"medium": "cartoon",
+		"characters": ["Leonardo", "Michelangelo", "Raphael", "Donatello", "Splinter", "April O'Neil", "Casey Jones", "Shredder", "Karai", "Foot Soldier #6", "Krang", "Rocksteady", "Bebop", "Baxter Stockman", "Tokka", "Rahzar"],
+		"locations": ["Manhattan", "Technodrome", "Dimension X", "The Foot Clan's secret lair"],
+		"props": ["ooze", "pizza", "sewer", "'cowabunga!'", "Splinter's training"],
+		"fuckingWat": false
+	}),
+	Ember.Object.create({
+		"name": "The Legend of Zelda",
+		"google": 8300000,
+		"popularity": 45,
+		"weirdness": 3,
+		"genre": ["action", "adventure", "drama"],
+		"medium": "video game",
+		"characters": ["Link", "Dark Link", "Princess Zelda", "Ganondorf", "Epona", "Sheik", "Zora", "Agahnim", "Lanayru, The Thunder Dragon"],
+		"locations": ["Hyrule", "Temple of Time", "Ikana Canyon", "Dark World", "Sky Keep"],
+		"props": ["ocarina", "deku nut", "Bomber's Notebook", "Jar of Milk", "Triforce", "Master Sword"],
+		"fuckingWat": false
+	}),
+	Ember.Object.create({
+		name: "Game of Thrones",
+		google: 46300000,
+		popularity: 75,
+		weirdness: 0.05,
+		genre: [
+			"fantasy",
+			"adventure",
+			"drama"
+		],
+		medium: "television",
+		characters: [
+			"Tyrion Lannister",
+			"Cersei Lannister",
+			"Daenerys Targaryen",
+			"Jon Snow",
+			"Brienne of Tarth",
+			"Gendry",
+			"Ygritte",
+			"Stannis Baratheon",
+			"Khal Drogo",
+			"Daario Naharis",
+			"Sansa Stark",
+			"Shae",
+			"Eddard Stark",
+			"Tywin Lannister"
+		],
+		locations: [
+			"King's Landing",
+			"Casterly Rock",
+			"The Wall",
+			"Red Keep",
+			"Qarth",
+			"Castle Black",
+			"Haunted Forest",
+			"Slaver's Bay",
+			"North of the Wall",
+			"The North",
+			"Iron Islands",
+			"Flea Bottom"
+		],
+		props: [
+			"Tywin's missing hand",
+			"Eddard's missing head",
+			"Milk of the Poppy",
+			"the Iron Throne",
+			"Wildfire",
+			"Needle",
+			"Oathkeeper"
+		],
+		fuckingWat: false
 	})
 ]);

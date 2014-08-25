@@ -577,6 +577,16 @@ a.btn.btn-sidebar {
 	width: 80%;
 }
 
+.page.view-story > h4 {
+	display: block;
+	text-align: center;
+}
+
+.page.view-story > h3.rating {
+	margin-bottom: 25px;
+}
+
+
 @media screen and (max-width: 1400px){
 	.page.view-story > a.btn, .page.story-history > a.btn {
 		display: block;
@@ -642,4 +652,5 @@ a.btn.btn-sidebar {
 	.page.view-story {
 		width: 80%;
 	}
+
 }
