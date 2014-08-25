@@ -214,13 +214,13 @@ App.AppController = Ember.ObjectController.extend({
 	},
 	get_followers: function() {
 		var followers;
-		debugger;
+
 		if (!this.get('office')) {
 			return;
 		}
 
 		followers = this.get('office.followers_incoming') || 0;
-		debugger;
+
 		this.set('office.followers', this.get('office.followers') + followers);
 	},
 

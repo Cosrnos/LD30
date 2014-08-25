@@ -86,7 +86,18 @@ App.Worlds = Em.A([
 		medium: 'book',
 		characters: ['Harry Potter', 'Hagrid', 'Snape', 'Dobby', 'Petunia Dursley', 'Moaning Myrtle', 'Voldemort'],
 		locations: ["Diagon Alley", "Hogwartz", "Privet Drive", "The Ministry of Magic", "The Chamber of Secrets"],
-		props: ['the snitch', "horcrux", "invisibility cloak", "the elder wand", "the Whomping Willow"],
+		props: ['the snitch', "a horcrux", "the invisibility cloak", "the elder wand", "the Whomping Willow"],
 		fuckingWat: false
+	}),
+	Ember.Object.create({
+		name: "Teen Wolf",
+		google: 9610000,
+		popularity: 10,
+		weirdness: 0.05,
+		genre: ['fantasy', 'romance', 'drama', 'sci-fi'],
+		medium: 'tv',
+		characters: ['Derek', 'Scott', 'Styles', 'The Sheriff', 'Lydia', 'Chris Argent', 'Peter', 'Danny', 'Jackson', 'Malia'],
+		locations: ["Derek's Loft", 'Beacon Hills', 'Beacon Hills High School', 'the vetrinary clinic', 'Mexico'],
+		props: ['wolfsbane', "derek's eyebrows", "mistletoe", 'mountain ash']
 	})
 ]);

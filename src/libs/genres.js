@@ -2,14 +2,10 @@
  	'comedy',
  	'drama',
  	'horror',
- 	'kids',
  	'mystery',
- 	'paranormal teen romance',
  	'police procedural',
  	'romance',
  	'romantic comedy',
  	'sci-fi',
- 	'sports',
- 	'suspense',
- 	'western',
+ 	'sports'
  ];

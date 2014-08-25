@@ -53,17 +53,21 @@ App.Stories = Ember.Object.extend({
 		var template = _.sample(App.SynopsisTemplates[genre]);
 
 		// random things
-		var characters = [_.sample(this.get('world1.characters')), _.sample(this.get('world2.characters'))];
+		var char1s = _.sample(this.get('world1.characters'), 2);
+		var char2s = _.sample(this.get('world2.characters'), 2);
 		var locations = [_.sample(this.get('world1.locations')), _.sample(this.get('world2.locations'))];
 		var props = [_.sample(this.get('world1.props')), _.sample(this.get('world2.props'))];
 
 		// Replacements
-		template = template.replace(/{character1}/g, characters[0]);
-		template = template.replace(/{character2}/g, characters[1]);
+		template = template.replace(/{character1}/g, char1s[0]);
+		template = template.replace(/{character2}/g, char2s[0]);
+		template = template.replace(/{sidekick1}/g, char1s[1]);
+		template = template.replace(/{sidekick2}/g, char2s[1]);
 		template = template.replace(/{location1}/g, locations[0]);
 		template = template.replace(/{location2}/g, locations[1]);
 		template = template.replace(/{prop1}/g, props[0]);
 		template = template.replace(/{prop2}/g, props[1]);
+
 
 		this.set('synopsis', template);
 	},
