@@ -2,7 +2,9 @@
 
 
 <div class="dashboard-section stories">
-    <h2>Stories</h2>
+    <h2>Stories{{#if controllers.app.office.projects_past}}
+        {{#link-to 'history' class="btn btn-float-right"}}View Past Projects{{/link-to}}
+    {{/if}}</h2>
     <h4>Stories in Progress</h4>
 
     {{#if controllers.app.office.projects_current}}
@@ -32,10 +34,6 @@
     <div>
         {{#link-to "newStory" class="btn btn-xlarge" classNameBindings="controllers.app.office.employees_available.length:enabled:disabled"}}Add New Story{{/link-to}}
     </div>
-
-    {{#if controllers.app.office.projects_past}}
-        {{#link-to 'history'}}View Past Projects{{/link-to}}
-    {{/if}}
 </div>
 
 <div class="dashboard-section team">
