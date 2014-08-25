@@ -5,6 +5,8 @@ App.AppController = Ember.ObjectController.extend({
 	_week: 1,
 	_day: 0,
 
+	_canvas: null,
+
 	_events: Em.A([]),
 
 	_views: 0,
@@ -69,7 +71,12 @@ App.AppController = Ember.ObjectController.extend({
 	},
 
 	_drawPageViews: function() {
-		var canv = document.getElementById('dashboard-canv') || document.createElement('canvas');
+		var canv = this.get('_canvas');
+		if (!canv) {
+			canv = document.createElement('canvas');
+			canv.setAttribute('width', 500);
+			canv.setAttribute('height', 250);
+		}
 		var stories = this.get('office.projects_past');
 		if (canv && stories) {
 
@@ -87,6 +94,14 @@ App.AppController = Ember.ObjectController.extend({
 			var off = 250 - Math.floor(views / 10);
 			ctx.fillRect(99 * 5, off, 5, Math.floor(views / 10));
 		}
+
+		if (document.getElementById('dashboard-canv')) {
+			var dbctx = document.getElementById('dashboard-canv').getContext('2d');
+			dbctx.clearRect(0, 0, 500, 250);
+			dbctx.putImageData(ctx.getImageData(0, 0, 500, 250), 0, 0);
+		}
+
+		this.set('_canvas', canv);
 	},
 
 	tick: function() {

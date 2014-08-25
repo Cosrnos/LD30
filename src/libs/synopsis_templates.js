@@ -17,7 +17,9 @@ App.SynopsisTemplates = {
         "{character1} has to learn to live again after losing the family in an accident. {character1} draws strength to move forward when {character2} and a lovable pup take {character1} to {location2} for a renewed lesson in the power of faith."
     ],
     'mystery': [],
-    'paranormal teen romance': [],
+    'paranormal teen romance': [
+        "{character1} moves from {location1} to live with family in {location2}. After moving, {character1} is involuntarily drawn to the mysterious {character2}. It's only a matter of time before the two fall in love despite {character2}'s insatiable thirst for {prop1}."
+    ],
     'police procedural': [],
     'romance': [],
     'romantic comedy': [],
