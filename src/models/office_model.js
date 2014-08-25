@@ -11,7 +11,7 @@ App.Office = Ember.Object.extend({
 		8: 330000,
 		9: 420000
 	},
-
+	followers: 0,
 	level: 1,
 	capacity: function() {
 		return this.get('level') + 1;
@@ -69,13 +69,23 @@ App.Office = Ember.Object.extend({
 		return this.rent[this.get('level')];
 	}.property('level'),
 
+	followers_incoming: function() {
+		var followers = 0;
+		_.each(this.get('projects_past'), function(story) {
+			followers += (story.get('followersThisDay'));
+		});
+
+		return followers;
+	}.property('projects_past.@each.followersThisDay'),
+
 	money_incoming: function() {
 		var income = 0;
 		_.each(this.get('projects_past'), function(story) {
-			income += (story.get('pageviews') * App.Utils.get('config.PAGEVIEW_CENTS'));
+			income += (story.get('viewsThisDay') * App.Utils.get('config.PAGEVIEW_CENTS'));
 		});
+		//debugger;
 		return income;
-	}.property('projects_past.@each.pageviews'),
+	}.property('projects_past.@each.viewsThisDay'),
 	money_outgoing: function() {
 		var employees = this.get('employees');
 		var rent = this.get('cost_of_rent');

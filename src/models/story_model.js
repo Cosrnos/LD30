@@ -29,12 +29,15 @@ App.Stories = Ember.Object.extend({
 	//Stats
 	criticRating: undefined,
 	weirdness: 0,
+	weirdBonus: 1,
 	views: 0,
 	wordCount: undefined,
 
 	age: 0, //In game days
 	totalView: 0,
 	wentViral: false,
+	dayOneViews: 1,
+	basePopularity: 1,
 
 	done: function() {
 		return (this.get('progress') >= 100 && this.get('_done'));
@@ -71,18 +74,10 @@ App.Stories = Ember.Object.extend({
 		var criticRating = this.get('criticRating');
 		var world1 = this.get('world1');
 		var world2 = this.get('world2');
-		var base = Math.ceil((world1.get('google') + world2.get('google')) / 1000000);
-		var followers = App.get('office.followers_total') || 0;
-		base = Math.max(base, 10);
+		var weirdBonus = this.get('weirdBonus');
+		var base = this.get('basePopularity')
 
-		var weirdBonus = world1.get('weirdness') + world2.get('weirdness');
-		if (xor(world1.get('weirdness'), world2.get('weirdness'))) {
-			weirdBonus += .25;
-		}
-		//The weirdBonus is bound between 1.5 and 0.85
-		weirdBonus = Math.min(1.5, Math.max(weirdBonus, 0.85));
-
-		var dayOne = ((followers / 10) * criticRating + (base * Math.pow(base, 0.75))) * weirdBonus;
+		var dayOne = this.get('dayOneViews')
 
 		if (age === 7) {
 			if (criticRating <= 10) {
@@ -95,17 +90,21 @@ App.Stories = Ember.Object.extend({
 		}
 
 		if (this.get('wentViral')) {
-			viralBonus = ((followers / 10) * 80 + (base * 1.5 * Math.pow(base, 0.75))) * (weirdBonus * weirdBonus);
+			viralBonus = ((base * 100 / 10) * 80 + (base * 1.5 * Math.pow(base, 0.75))) * (weirdBonus * weirdBonus);
 			viralBonus = Math.ceil(viralBonus / (0.95 * (age - 7)));
 		}
 
-		return Math.ceil(dayOne / (0.75 * age)) + viralBonus;
+		if (age === 0) {
+			return Math.ceil(dayOne + viralBonus);
+		} else {
+			return Math.ceil(dayOne / (0.75 * age)) + viralBonus;
+		}
 
 	}.property('age'),
 
 	followersThisDay: function() {
 		var todayViews = this.get('viewsThisDay');
-		return (criticRating * todayViews * .05) / (40);
+		return Math.floor((this.get('criticRating') * todayViews * .05) / (40));
 	}.property('viewsThisDay')
 
 

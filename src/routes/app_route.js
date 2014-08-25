@@ -27,5 +27,6 @@ App.AppRoute = Ember.Route.extend({
     },
     setupController: function(controller, model) {
         controller.set('content', model);
+        App.theOffice = model.office;
     }
 });

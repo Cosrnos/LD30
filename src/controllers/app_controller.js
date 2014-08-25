@@ -96,10 +96,12 @@ App.AppController = Ember.ObjectController.extend({
 			var month = this.get('_month');
 			var year = this.get('_year');
 
+
 			day++;
 
 			// Daily actions
 			this.get_pageview_income();
+			this.get_followers();
 			this._checkEvents();
 			this._updateStories();
 			this._drawPageViews();
@@ -142,13 +144,14 @@ App.AppController = Ember.ObjectController.extend({
 	},
 
 	// Social
-	followers_facespace: 1693,
-	followers_tweetbook: 1213,
-	followers_wumbler: 8530,
+	followers: 0,
+	followers_facespace: 0,
+	followers_tweetbook: 0,
+	followers_wumbler: 0,
 	followers_total: function() {
-		return this.get('followers_facespace') + this.get('followers_tweetbook') + this.get('followers_wumbler');
-	}.property('followers_facespace', 'followers_tweetbook', 'followers_wumbler'),
-
+		return this.get('office.followers');
+		//return this.get('followers_facespace') + this.get('followers_tweetbook') + this.get('followers_wumbler');
+	}.property('office.followers'),
 	// Caching of hiring candidates
 	get_new_hiring_candidates: function() {
 		var employees = Em.A([]);
@@ -186,7 +189,6 @@ App.AppController = Ember.ObjectController.extend({
 	// Calculate income from pageviews
 	get_pageview_income: function() {
 		var income;
-
 		if (!this.get('office')) {
 			return;
 		}
@@ -194,6 +196,17 @@ App.AppController = Ember.ObjectController.extend({
 		income = this.get('office.money_incoming') || 0;
 
 		this.set('office.bank', this.get('office.bank') + income);
+	},
+	get_followers: function() {
+		var followers;
+		debugger;
+		if (!this.get('office')) {
+			return;
+		}
+
+		followers = this.get('office.followers_incoming') || 0;
+		debugger;
+		this.set('office.followers', this.get('office.followers') + followers);
 	},
 
 	payroll_and_rent: function() {
