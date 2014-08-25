@@ -153,6 +153,9 @@ App.AppController = Ember.ObjectController.extend({
 
 				// Monthly actions
 				this.get_new_hiring_candidates();
+				if (this.get('office.techie')) {
+					this.get('office.techie').incrementProperty('level_techie');
+				}
 			}
 
 			if (month === 13) {

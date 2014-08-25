@@ -34,21 +34,25 @@ App.DashboardController = Ember.ObjectController.extend({
             if (author) {
                 author.set('busy', false);
                 //Apply stats
+                author.incrementProperty('level_author');
             }
 
             if (editor) {
                 editor.set('busy', false);
                 //apply stats
+                editor.incrementProperty('level_editor');
             }
 
             if (artist) {
                 artist.set('busy', false);
                 //apply stats
+                artist.incrementProperty('level_artist');
             }
 
             if (promoter) {
                 promoter.set('busy', false);
                 //apply stats
+                promoter.incrementProperty('level_promoter');
             }
 
             story.set('_done', true);

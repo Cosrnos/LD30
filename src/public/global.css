@@ -586,6 +586,19 @@ a.btn.btn-sidebar {
 	margin-bottom: 25px;
 }
 
+.page.intro {
+	width: 80%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin: 00 auto;
+	font-size: 28px;
+	font-family: 'Droid Serif', serif;
+	line-height: 36px;
+}
+
+.page.intro a.btn.btn-xlarge {
+	font-size: 34px;
+}
 
 @media screen and (max-width: 1400px){
 	.page.view-story > a.btn, .page.story-history > a.btn {
@@ -652,5 +665,4 @@ a.btn.btn-sidebar {
 	.page.view-story {
 		width: 80%;
 	}
-
 }
