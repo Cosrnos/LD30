@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
 html, body, h1, h2, h3, h4, h5, h6, header, #sidebar, #content{
 	margin: 0px;
 	padding: 0px;
@@ -452,4 +454,105 @@ a.btn.btn-finish {
 	font-size: 12px;
 	margin-left: 0px;
 	margin-right: 5px;
+}
+
+.page {
+	width: 80%;
+	margin: 00 auto;
+}
+
+.page.view-story, .page.story-history {
+	width: 50%;
+	margin-top: 50px;
+}
+
+.page.view-story > h3 {
+	width: 100%;
+	text-align: center;
+	display: block;
+	font-size: 48px;
+	font-style: italic;
+	border-bottom: 5px solid #ff9d7d;
+	border-radius: 5px;
+}
+
+.page.view-story > h5 {
+	text-align: center;
+	display: block;
+	font-size: 18px;
+	font-style: italic;
+	width: 100%;
+}
+
+.page.view-story > h6 {
+	text-align: center;
+	display: block;
+	font-size: 14px;
+	font-style: italic;
+	width: 100%;
+}
+
+.page.view-story > p, .page.story-history > p{
+	font-size: 32px;
+	text-indent: 15px;
+	font-family: 'Droid Serif', serif;
+	letter-spacing: 1px;
+	font-style: italic;
+	line-height: 50px;
+}
+
+.page.view-story > a.btn, .page.story-history > a.btn {
+	display: block;
+	width: 50%;
+	font-size: 32px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page.story-history > ul {
+	width: 95%;
+	margin: 00 auto;
+	list-style: none;
+	padding-left: 0px;
+	border: 1px solid #ff9d7d;
+	background: #ffffff;
+	max-height: 50vh;
+	overflow: scroll hidden;
+}
+
+.page.story-history > ul > li {
+	list-style: none;
+	display: block;
+	width: 100%;
+	border: 1px solid #ff9d7d;
+}
+
+.page.story-history table {
+	width: 100%;
+}
+
+.page.story-history h4 {
+	display: block;
+	font-size: 24px;
+	border-bottom: 1px solid #ff9d7d;
+	margin-bottom: 4px;
+	margin-left: 10px;
+}
+
+.page.story-history h5 {
+	font-size: 14px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+.story-history.opts {
+	max-width: 50px;
+	width: 100px;
+	vertical-align: middle;
+}
+
+.story-history.opts > a.btn {
+	max-width: none;
+	min-width: 0px;
+	margin: 0px;
 }
