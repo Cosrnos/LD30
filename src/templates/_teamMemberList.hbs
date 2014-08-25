@@ -4,7 +4,7 @@
 			<table>
 				<tr>
 					<td class='icon'>
-						<div class="icon"></div>
+						<img {{bind-attr src="employee.avatar"}} class='icon' />
 					</td>
 					<td class="team-list-employee-stats">
 						<h5>{{employee.name}}{{#if employee.busy}} (Busy){{/if}}</h5>

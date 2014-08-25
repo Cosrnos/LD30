@@ -16,6 +16,10 @@ App.Employee = Ember.Object.extend({
     level_promoter: undefined,
     level_techie: undefined,
 
+    avatar: function() {
+        return 'http://www.gravatar.com/avatar/' + hex_md5(this.get('name') + "@rpgeezus.com") + '?s=64&d=retro';
+    }.property('name'),
+
     // init: function() {
     //     this.set('busy', false);
     // },

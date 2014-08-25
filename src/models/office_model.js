@@ -65,6 +65,10 @@ App.Office = Ember.Object.extend({
 		return uptime;
 	}.property('techie'),
 
+	website_uptime_formatted: function() {
+		return Math.floor(this.get('website_uptime') * 100) + "%"
+	}.property('website_uptime'),
+
 	// Finances
 	bank: 50000,
 	cost_of_rent: function() {

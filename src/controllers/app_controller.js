@@ -11,6 +11,14 @@ App.AppController = Ember.ObjectController.extend({
 
 	_views: 0,
 
+	can_upgrade: function() {
+		return this.get('office.level') < 9;
+	}.property('office.level'),
+
+	can_downgrade: function() {
+		return this.get('office.level') !== 1;
+	}.property('office.level'),
+
 	watch_views: function() {
 		this.set('office.views_today', this.get('_views'));
 	}.observes('_views'),
@@ -92,6 +100,8 @@ App.AppController = Ember.ObjectController.extend({
 		views += Math.floor(Math.random() * (this.get('office.followers') / (Math.random() * 20) + (Math.random() * 5 + 5)) + (this.get('office.followers') * .02));
 		views += Math.floor(Math.random() * App.Utils.config.get('RANDOM_VIEW_THRESHOLD'));
 
+		views = Math.floor(views * this.get('office.website_uptime'));
+
 		this.set('_views', views);
 
 		if (canv) {
@@ -99,8 +109,8 @@ App.AppController = Ember.ObjectController.extend({
 			var data = ctx.getImageData(0, 0, 500, 250);
 			ctx.clearRect(0, 0, 500, 250);
 			ctx.putImageData(data, -5, 0);
-			var off = 250 - Math.floor(views / 10);
-			ctx.fillRect(99 * 5, off, 5, Math.floor(views / 10));
+			var off = 250 - Math.floor(views / 20);
+			ctx.fillRect(99 * 5, off, 5, Math.floor(views / 20));
 		}
 
 		if (document.getElementById('dashboard-canv')) {
