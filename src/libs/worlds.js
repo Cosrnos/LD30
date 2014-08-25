@@ -86,7 +86,7 @@ App.Worlds = Em.A([
 		medium: 'book',
 		characters: ['Harry Potter', 'Hagrid', 'Snape', 'Dobby', 'Petunia Dursley', 'Moaning Myrtle', 'Voldemort'],
 		locations: ["Diagon Alley", "Hogwartz", "Privet Drive", "The Ministry of Magic", "The Chamber of Secrets"],
-		props: ['the snitch', "a horcrux", "the invisibility cloak", "the elder wand", "the Whomping Willow"],
+		props: ['the snitch', "a horcrux", "the invisibility cloak", "the elder wand", "the Whomping Willow", "a Nimbus 2000"],
 		fuckingWat: false
 	}),
 	Ember.Object.create({
@@ -113,7 +113,7 @@ App.Worlds = Em.A([
 	}),
 	Ember.Object.create({
 		name: 'Avatar the Last Airbender',
-		google: 1570000,
+		google: 13500000,
 		popularity: 12,
 		weirdness: 0.1,
 		genre: ['fantasy', 'drama'],
@@ -131,7 +131,7 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['Daria', 'Jane', 'Trent', 'Quinn', 'Helen', 'Up-chuck', 'Jake', 'Kevin', 'Brittany', 'Jodie'],
 		locations: ['Lawndale High', 'Cashmans', 'The Mall', 'Pizza King'],
-		props: ['an issue of sick sad world', 'ultra cola', 'pizza', 'self esteem']
+		props: ['an issue of sick sad world', 'Ultra Cola', 'pizza', 'self esteem']
 	}),
 	Ember.Object.create({
 		name: 'Glee',
@@ -143,5 +143,27 @@ App.Worlds = Em.A([
 		characters: ['Finn', 'Rachel', 'Quinn', 'Santana', 'Sam', 'Brittany', 'Artie', 'Kurt', 'Mr. Schue', 'Sue Sylvester'],
 		locations: ['The Choir Room', 'The Football Field', 'The Gym', 'Matress Land'],
 		props: ['a slushie', "artie's wheelchair", "Sue's Journal", 'a musical number']
+	}),
+	Ember.Object.create({
+		name: 'Sherlock',
+		google: 24200000,
+		popularity: 25,
+		weirdness: 0.13,
+		genre: ['drama', 'mystery'],
+		medium: 'tv',
+		characters: ['Sherlock Holmes', 'Dr. Watson', 'Jim Moriarty', 'Mycroft', 'Mrs. Hudson', 'Irene Adler'],
+		locations: ['London', 'New Scotland Yard', '221B Baker Street', "Speedy's Cafe", "St. Bart's Hospital"],
+		props: ['Deerstalker Hat', 'Mind Palace', 'intuition', "Watson's Blog", "a magnifying glass"]
+	}),
+	Ember.Object.create({
+		name: 'Stargate: SG-1',
+		google: 13100000,
+		popularity: 25,
+		weirdness: 0.17,
+		genre: ['sci-fi'],
+		medium: 'tv',
+		characters: ["Jack O'Neill", "Teal'c", "Samantha Carter", "Daniel Jackson", " Janet Fraiser", "Apophis"],
+		locations: ['Pegasus Galaxy', "Othala", "Goa'uld Pleasure Palace", "Abydos", "Cheyenne Mountain Complex", "the Stargate Control Room"],
+		props: ['Naqahdah', 'Zero Point Module', "a Goa'uld symbiote", "a Sarcophagus", "another Stargate"]
 	})
 ]);
