@@ -213,11 +213,7 @@ App.Worlds = Em.A([
 		google: 46300000,
 		popularity: 75,
 		weirdness: 0.05,
-		genre: [
-			"fantasy",
-			"adventure",
-			"drama"
-		],
+		genre: ["fantasy", "adventure", "drama"],
 		medium: "television",
 		characters: [
 			"Tyrion Lannister",
@@ -259,5 +255,41 @@ App.Worlds = Em.A([
 			"Oathkeeper"
 		],
 		fuckingWat: false
-	})
+	}), Ember.Object.create({
+		name: 'Dr. Quinn, Medicine Woman',
+		google: 1000000,
+		popularity: 10,
+		weirdness: 0.96,
+		genre: ['drama', 'western'],
+		medium: 'tv',
+		characters: ['Dr. Quinn, Medicine Woman', 'Byron Sully', 'Chief Black Kettle'],
+		locations: ['Colorado Springs', "Grace's Cafe", "Gold Nugget Saloon and Hotel"],
+		props: ["Doctor's Bag", "Typhus", "Influenza"],
+		fuckingWat: true
+	}), Ember.Object.create({
+		name: 'Hamlet',
+		google: 11800000,
+		popularity: 30,
+		weirdness: 0.90,
+		genre: ['drama', 'tragedy'],
+		medium: 'play',
+		characters: ['Hamlet', 'Ophelia', "Rosencrantz and Guildenstern", "Fortinbras", "the Ghost of Hamlet's Father"],
+		locations: ["Denmark", "Elsinore", "the Queen's Closet"],
+		props: ["Yorick's skull", 'indecisiveness', "poison"],
+		fuckingWat: true
+	}), Ember.Object.create({
+		name: 'The Lord of the Rings',
+		google: 55000000,
+		popularity: 70,
+		weirdness: 0.43,
+		genre: ['drama', 'fantasy'],
+		medium: 'play',
+		characters: ["Frodo Baggins", "Samwise Gamgee", "Gandalf the Grey", "Gandalf the White", "Smeagol", "Gollum", "Elrond", "Gimli", "Sauron", "Treebeard", "Tom Bombadil"],
+		locations: ["Mt. Doom", "Mordor", "Bagend", "Rivendell", "Khazad-dum", "Barad-dûr", "The Black Gate", "The Shire"],
+		props: ["The One Ring", "Anduril", "the Shards of Narsil", "palantir", "Ents", "Potatos, PO-TAY-TOES", 'Sting', "Mithril", "Horn of Helm Hammerhand"],
+		fuckingWat: false
+	}),
+
+
+
 ]);

@@ -86,6 +86,7 @@ App.NewStoryController = Ember.Controller.extend({
 
             //THis function has a horizontal asymtote at 100.
             var criticRating = (100 * (2 / Math.PI)) * Math.atan(.020 * (criticBase * editorMuliplier));
+            criticRating += _.random(-3, 3);
 
             var weirdBonus = world1.get('weirdness') + world2.get('weirdness');
             if (xor(world1.get('weirdness'), world2.get('weirdness'))) {
@@ -100,8 +101,7 @@ App.NewStoryController = Ember.Controller.extend({
             var followers = office.get('followers') || 0;
             //Calculate day one views.
             var dayOneViews = Math.ceil(((followers / 8) * criticRating + (30 * Math.pow(basePopularity, 0.75))) * weirdBonus);
-            debugger;
-            console.log(dayOneViews);
+
             newStory.set('criticRating', Math.ceil(criticRating));
             newStory.set('weirdness', Math.max(world1.get('weirdness'), world2.get('weirdness')));
             newStory.set('weirdBonus', weirdBonus);
