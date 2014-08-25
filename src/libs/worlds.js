@@ -80,7 +80,7 @@ App.Worlds = Em.A([
 	Ember.Object.create({
 		name: "Harry Potter",
 		google: 9810000,
-		popularity: 20,
+		popularity: 70,
 		weirdness: 0.02,
 		genre: ['comedy', 'kids', 'adnedture', 'fantasy', ],
 		medium: 'book',
@@ -92,7 +92,7 @@ App.Worlds = Em.A([
 	Ember.Object.create({
 		name: "Teen Wolf",
 		google: 9610000,
-		popularity: 10,
+		popularity: 65,
 		weirdness: 0.05,
 		genre: ['fantasy', 'romance', 'drama', 'sci-fi'],
 		medium: 'tv',
@@ -103,7 +103,7 @@ App.Worlds = Em.A([
 	Ember.Object.create({
 		name: "Shrek",
 		google: 12400000,
-		popularity: 5,
+		popularity: 20,
 		weirdness: 0.7,
 		genre: ['comedy', 'kids', 'romance'],
 		medium: 'movie',
@@ -114,7 +114,7 @@ App.Worlds = Em.A([
 	Ember.Object.create({
 		name: 'Avatar the Last Airbender',
 		google: 13500000,
-		popularity: 12,
+		popularity: 45,
 		weirdness: 0.1,
 		genre: ['fantasy', 'drama'],
 		medium: 'tv',
@@ -125,7 +125,7 @@ App.Worlds = Em.A([
 	Ember.Object.create({
 		name: 'Daria',
 		google: 15700000,
-		popularity: 5,
+		popularity: 15,
 		weirdness: 0.6,
 		genre: ['drama', 'comedy'],
 		medium: 'tv',
@@ -136,7 +136,7 @@ App.Worlds = Em.A([
 	Ember.Object.create({
 		name: 'Glee',
 		google: 27900000,
-		popularity: 25,
+		popularity: 50,
 		weirdness: 0.05,
 		genre: ['drama', 'comedy', 'romance'],
 		medium: 'tv',
@@ -175,20 +175,31 @@ App.Worlds = Em.A([
 		"medium": "cartoon",
 		"characters": ["Leonardo", "Michelangelo", "Raphael", "Donatello", "Splinter", "April O'Neil", "Casey Jones", "Shredder", "Karai", "Foot Soldier #6", "Krang", "Rocksteady", "Bebop", "Baxter Stockman", "Tokka", "Rahzar"],
 		"locations": ["Manhattan", "Technodrome", "Dimension X", "The Foot Clan's secret lair"],
-		"props": ["ooze", "pizza", "sewer", "'cowabunga!'", "Splinter's training"],
+		"props": ["ooze", "pizza", "the sewer", "'cowabunga!'", "Splinter's training"],
 		"fuckingWat": false
 	}),
 	Ember.Object.create({
 		"name": "The Legend of Zelda",
 		"google": 8300000,
 		"popularity": 45,
-		"weirdness": 3,
+		"weirdness": 0.3,
 		"genre": ["action", "adventure", "drama"],
 		"medium": "video game",
 		"characters": ["Link", "Dark Link", "Princess Zelda", "Ganondorf", "Epona", "Sheik", "Zora", "Agahnim", "Lanayru, The Thunder Dragon"],
 		"locations": ["Hyrule", "Temple of Time", "Ikana Canyon", "Dark World", "Sky Keep"],
-		"props": ["ocarina", "deku nut", "Bomber's Notebook", "Jar of Milk", "Triforce", "Master Sword"],
+		"props": ["an ocarina", "a deku nut", "Bomber's Notebook", "a Jar of Milk", "the Triforce", "the Master Sword"],
 		"fuckingWat": false
+	}),
+	Ember.Object.create({
+		name: 'Pokemon',
+		google: 59500000,
+		popularity: 40,
+		weirdness: 0.4,
+		genre: [''],
+		medium: 'video game',
+		characters: ['Ash', 'Misty', 'Brock', 'Pikachu', 'Jesse', 'James', 'Meowth', 'Professor Oak'],
+		locations: ['Palette Town', 'Mt. Moon', 'Lavendar Town', 'Pewter City', 'Silph Co.'],
+		props: ['a masterball', 'The Marsh Badge', 'a pokeflute', 'tickets to the S.S. Anne', 'Team Rocket Blasting off Again!']
 	}),
 	Ember.Object.create({
 		name: "Game of Thrones",

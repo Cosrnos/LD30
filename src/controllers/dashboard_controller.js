@@ -31,11 +31,15 @@ App.DashboardController = Ember.ObjectController.extend({
             var artist = story.get('artist');
             var promoter = story.get('promoter');
 
+            debugger;
+
             if (author) {
                 author.set('busy', false);
                 //Apply stats
-                author.incrementProperty('level_author');
+                author.incrementProperty('level_writer');
             }
+
+            debugger;
 
             if (editor) {
                 editor.set('busy', false);

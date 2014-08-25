@@ -10,11 +10,11 @@ App.Employee = Ember.Object.extend({
     interests_worlds: undefined,
 
     // Levels per role (initialized value between 0 and infinity)
-    level_artist: undefined,
-    level_writer: undefined,
-    level_editor: undefined,
-    level_promoter: undefined,
-    level_techie: undefined,
+    level_artist: 0,
+    level_writer: 0,
+    level_editor: 0,
+    level_promoter: 0,
+    level_techie: 0,
 
     avatar: function() {
         return 'http://www.gravatar.com/avatar/' + hex_md5(this.get('name') + "@rpgeezus.com") + '?s=64&d=retro';

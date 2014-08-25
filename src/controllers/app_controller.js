@@ -106,6 +106,7 @@ App.AppController = Ember.ObjectController.extend({
 
 		if (canv) {
 			var ctx = canv.getContext('2d');
+			ctx.fillStyle = '#ff9d7d';
 			var data = ctx.getImageData(0, 0, 500, 250);
 			ctx.clearRect(0, 0, 500, 250);
 			ctx.putImageData(data, -5, 0);
