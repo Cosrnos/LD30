@@ -27,6 +27,7 @@ App.SelectField = Ember.Select.extend({
             //     };
             // },
             containerCss: {
+                'min-width': '200px',
                 'margin-bottom': '6px'
             },
         });

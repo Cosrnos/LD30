@@ -32,7 +32,11 @@
         </ul>
     {{/if}}
     <div>
-        {{#link-to "newStory" class="btn btn-xlarge" classNameBindings="controllers.app.office.employees_available.length:enabled:disabled"}}Add New Story{{/link-to}}
+        {{#if controllers.app.office.employees_available.length}}
+            {{#link-to "newStory" class="btn btn-xlarge" classNameBindings="controllers.app.office.employees_available.length:enabled:disabled"}}Add New Story{{/link-to}}
+        {{else}}
+            <a class="btn btn-xlarge disabled">Add New Story</a>
+        {{/if}}
     </div>
 </div>
 

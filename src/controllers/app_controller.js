@@ -11,6 +11,10 @@ App.AppController = Ember.ObjectController.extend({
 
 	_views: 0,
 
+	watch_views: function() {
+		this.set('office.views_today', this.get('_views'));
+	}.observes('_views'),
+
 	init: function() {
 
 		this.tick();
@@ -72,21 +76,25 @@ App.AppController = Ember.ObjectController.extend({
 
 	_drawPageViews: function() {
 		var canv = this.get('_canvas');
+		var views = 0;
 		if (!canv) {
 			canv = document.createElement('canvas');
 			canv.setAttribute('width', 500);
 			canv.setAttribute('height', 250);
 		}
 		var stories = this.get('office.projects_past');
-		if (canv && stories) {
-
-			var views = 0;
+		if (stories) {
 			stories.forEach(function(story) {
 				views += story.get('viewsThisDay');
 			});
+		}
+		//Add a degree of randomness
+		views += Math.floor(Math.random() * (this.get('office.followers') / (Math.random() * 20) + (Math.random() * 5 + 5)) + (this.get('office.followers') * .02));
+		views += Math.floor(Math.random() * App.Utils.config.get('RANDOM_VIEW_THRESHOLD'));
 
-			this.set('_views', views);
+		this.set('_views', views);
 
+		if (canv) {
 			var ctx = canv.getContext('2d');
 			var data = ctx.getImageData(0, 0, 500, 250);
 			ctx.clearRect(0, 0, 500, 250);
@@ -115,11 +123,11 @@ App.AppController = Ember.ObjectController.extend({
 			day++;
 
 			// Daily actions
-			this.get_pageview_income();
-			this.get_followers();
-			this._checkEvents();
 			this._updateStories();
 			this._drawPageViews();
+			this.get_followers();
+			this.get_pageview_income();
+			this._checkEvents();
 
 			if (day === 8) {
 				week += 1;

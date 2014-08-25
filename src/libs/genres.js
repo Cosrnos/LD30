@@ -1,11 +1,11 @@
  App.Genres = [
- 	'comedy',
- 	'drama',
- 	'horror',
- 	'mystery',
- 	'police procedural',
- 	'romance',
- 	'romantic comedy',
- 	'sci-fi',
- 	'sports'
+ 	'Comedy',
+ 	'Drama',
+ 	'Horror',
+ 	'Mystery',
+ 	'Police Procedural',
+ 	'Romance',
+ 	'Romantic Comedy',
+ 	'Sci-Fi',
+ 	'Sports'
  ];

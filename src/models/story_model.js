@@ -101,7 +101,7 @@ App.Stories = Ember.Object.extend({
 		if (age === 0) {
 			return Math.ceil(dayOne + viralBonus);
 		} else {
-			return Math.ceil(dayOne / (0.75 * age)) + viralBonus;
+			return Math.ceil(dayOne / (0.5 * age)) + viralBonus;
 		}
 
 	}.property('age'),

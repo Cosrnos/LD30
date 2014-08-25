@@ -17,6 +17,8 @@ App.Office = Ember.Object.extend({
 		return this.get('level') + 1;
 	}.property('level'),
 
+	views_today: 0,
+
 	employees: Em.A([]),
 	employees_busy: Ember.computed.filterBy('employees', 'busy', true),
 	employees_available: Ember.computed.filterBy('employees', 'busy', false),
@@ -79,13 +81,10 @@ App.Office = Ember.Object.extend({
 	}.property('projects_past.@each.followersThisDay'),
 
 	money_incoming: function() {
-		var income = 0;
-		_.each(this.get('projects_past'), function(story) {
-			income += (story.get('viewsThisDay') * App.Utils.get('config.PAGEVIEW_CENTS'));
-		});
-		//debugger;
+		var income = this.get('views_today') * App.Utils.get('config.PAGEVIEW_CENTS');
+
 		return income;
-	}.property('projects_past.@each.viewsThisDay'),
+	}.property('views_today'),
 	money_outgoing: function() {
 		var employees = this.get('employees');
 		var rent = this.get('cost_of_rent');
