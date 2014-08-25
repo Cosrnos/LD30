@@ -101,14 +101,14 @@ App.Stories = Ember.Object.extend({
 		if (age === 0) {
 			return Math.ceil(dayOne + viralBonus);
 		} else {
-			return Math.ceil(dayOne / (.75 * Math.pow(age, .5))) + viralBonus;
+			return Math.ceil(dayOne / (App.Utils.config.get('DECAY_RATE') * Math.pow(age, .5))) + viralBonus;
 		}
 
 	}.property('age'),
 
 	followersThisDay: function() {
 		var todayViews = this.get('viewsThisDay');
-		return Math.floor((this.get('criticRating') * todayViews * .05) / (40));
+		return Math.floor((this.get('criticRating') * todayViews * App.Utils.config.get("FOLLOW_GROWTH_RATE") * 0.01) / (50));
 	}.property('viewsThisDay')
 
 

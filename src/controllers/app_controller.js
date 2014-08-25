@@ -110,8 +110,8 @@ App.AppController = Ember.ObjectController.extend({
 			var data = ctx.getImageData(0, 0, 500, 250);
 			ctx.clearRect(0, 0, 500, 250);
 			ctx.putImageData(data, -5, 0);
-			var off = 250 - Math.floor(views / 20);
-			ctx.fillRect(99 * 5, off, 5, Math.floor(views / 20));
+			var off = 250 - Math.floor(views / 50);
+			ctx.fillRect(99 * 5, off, 5, Math.floor(views / 50));
 		}
 
 		if (document.getElementById('dashboard-canv')) {

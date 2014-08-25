@@ -100,7 +100,7 @@ App.NewStoryController = Ember.Controller.extend({
 
             var followers = office.get('followers') || 0;
             //Calculate day one views.
-            var dayOneViews = Math.ceil(((followers / 8) * criticRating + (30 * Math.pow(basePopularity, 0.75))) * weirdBonus);
+            var dayOneViews = Math.ceil(((followers / (App.Utils.config.get('DAY_ONE_FOLLOWER_FACTOR'))) * criticRating + (31 * Math.pow(basePopularity, 0.7))) * weirdBonus);
 
             newStory.set('criticRating', Math.ceil(criticRating));
             newStory.set('weirdness', Math.max(world1.get('weirdness'), world2.get('weirdness')));
