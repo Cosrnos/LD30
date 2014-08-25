@@ -97,7 +97,51 @@ App.Worlds = Em.A([
 		genre: ['fantasy', 'romance', 'drama', 'sci-fi'],
 		medium: 'tv',
 		characters: ['Derek', 'Scott', 'Styles', 'The Sheriff', 'Lydia', 'Chris Argent', 'Peter', 'Danny', 'Jackson', 'Malia'],
-		locations: ["Derek's Loft", 'Beacon Hills', 'Beacon Hills High School', 'the vetrinary clinic', 'Mexico'],
-		props: ['wolfsbane', "derek's eyebrows", "mistletoe", 'mountain ash']
+		locations: ["Derek's Loft", 'Beacon Hills', 'the vetrinary clinic', 'Mexico'],
+		props: ['wolfsbane', "derek's eyebrows", "mistletoe", 'mountain ash', 'a banshee']
+	}),
+	Ember.Object.create({
+		name: "Shrek",
+		google: 12400000,
+		popularity: 5,
+		weirdness: 0.7,
+		genre: ['comedy', 'kids', 'romance'],
+		medium: 'movie',
+		characters: ['Shrek', 'Fiona', 'Donkey', 'Lord Farquad', 'The Gingerbread Man', 'Fairy Godmother', 'The First blind Mouse'],
+		locations: ["Shrek's Swamp", 'Far Far Away Land', 'a Giant Tower'],
+		props: ['a magic potion', 'gumdrop buttons', "true love's kiss"]
+	}),
+	Ember.Object.create({
+		name: 'Avatar the Last Airbender',
+		google: 1570000,
+		popularity: 12,
+		weirdness: 0.1,
+		genre: ['fantasy', 'drama'],
+		medium: 'tv',
+		characters: ['Aang', 'Katara', 'Sokka', 'Toph', 'Zuko', 'Uncle Iroh', 'Appa', 'Momo', 'Azula', 'The Cabbage Vendor'],
+		locations: ['The North Pole', 'Ba Sing Se', 'Kyoshi Island', 'The Spirit World', 'Ember Island'],
+		props: ['a boomerang', 'a water bending scroll', 'jasmine tea', 'cabbages']
+	}),
+	Ember.Object.create({
+		name: 'Daria',
+		google: 15700000,
+		popularity: 5,
+		weirdness: 0.6,
+		genre: ['drama', 'comedy'],
+		medium: 'tv',
+		characters: ['Daria', 'Jane', 'Trent', 'Quinn', 'Helen', 'Up-chuck', 'Jake', 'Kevin', 'Brittany', 'Jodie'],
+		locations: ['Lawndale High', 'Cashmans', 'The Mall', 'Pizza King'],
+		props: ['an issue of sick sad world', 'ultra cola', 'pizza', 'self esteem']
+	}),
+	Ember.Object.create({
+		name: 'Glee',
+		google: 27900000,
+		popularity: 25,
+		weirdness: 0.05,
+		genre: ['drama', 'comedy', 'romance'],
+		medium: 'tv',
+		characters: ['Finn', 'Rachel', 'Quinn', 'Santana', 'Sam', 'Brittany', 'Artie', 'Kurt', 'Mr. Schue', 'Sue Sylvester'],
+		locations: ['The Choir Room', 'The Football Field', 'The Gym', 'Matress Land'],
+		props: ['a slushie', "artie's wheelchair", "Sue's Journal", 'a musical number']
 	})
 ]);
