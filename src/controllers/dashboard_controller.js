@@ -53,7 +53,7 @@ App.DashboardController = Ember.ObjectController.extend({
 
             story.set('_done', true);
 
-            console.log('Synopsis: ' + story.get('synopsis'));
+            this.transitionToRoute('viewStory', story);
         }
     }
 });
