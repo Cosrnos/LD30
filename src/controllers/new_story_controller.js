@@ -94,13 +94,14 @@ App.NewStoryController = Ember.Controller.extend({
             //The weirdBonus is bound between 1.5 and 0.85
             weirdBonus = Math.min(1.5, Math.max(weirdBonus, 0.85));
 
-            var basePopularity = Math.ceil((world1.get('google') + world2.get('google')) / 1000000);
+            var basePopularity = Math.ceil((world1.get('google') + world2.get('google')) / 500000);
             basePopularity = Math.max(basePopularity, 10);
 
-            var followers = office.get('followers_total') || 0;
+            var followers = office.get('followers') || 0;
             //Calculate day one views.
-            var dayOneViews = ((followers / 8) * criticRating + (basePopularity * Math.pow(basePopularity, 0.75))) * weirdBonus;
-
+            var dayOneViews = Math.ceil(((followers / 8) * criticRating + (30 * Math.pow(basePopularity, 0.75))) * weirdBonus);
+            debugger;
+            console.log(dayOneViews);
             newStory.set('criticRating', Math.ceil(criticRating));
             newStory.set('weirdness', Math.max(world1.get('weirdness'), world2.get('weirdness')));
             newStory.set('weirdBonus', weirdBonus);

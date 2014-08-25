@@ -17,9 +17,9 @@ App.Worlds = Em.A([
 		weirdness: 0.02,
 		genre: ['sci-fi', 'adventure'],
 		medium: 'movie',
-		characters: ['Han Solo', 'Luke', 'Chewbacka', 'General Grievous', 'Mace Windu', 'Princess Leah', 'Amidala'],
+		characters: ['Han Solo', 'Luke Skywalker', 'Chewbacka', 'General Grievous', 'Mace Windu', 'Princess Leah', 'Princess Amidala', 'Darth Vader'],
 		locations: ['Tatooine', 'Hoth', 'Endor', 'Death Star'],
-		props: ['lightsabre', 'X-Wing', 'midichlorians', 'Sarlacc'],
+		props: ['lightsabre', 'X-Wing', 'midichlorians', 'Sarlacc', 'the Force'],
 		fuckingWat: false
 	}), Ember.Object.create({
 		name: "Star Trek: The Next Generation",
@@ -28,9 +28,9 @@ App.Worlds = Em.A([
 		weirdness: 0.03,
 		genre: ['sci-fi'],
 		medium: 'TV',
-		characters: ['Worf', 'Data', 'Jean Luc Picard', 'Wesley', 'Q', 'Counselor Troi', 'Dr. Crusher', 'Belana Troi', 'Guinan'],
+		characters: ['Worf', 'Data', 'Jean Luc Picard', 'Wesley Crusher', 'Q', 'Counselor Troi', 'Dr. Crusher', 'Lwaxana Troi', 'Guinan'],
 		locations: ['Star Fleet Academy', 'Wolf 359', 'Betazed', 'Delta Quadrent', 'The Q Continuum', "Qo'noS"],
-		props: ['tricorder', 'phaser', 'cloaking device', 'dilithium crystal', 'Borg technology'],
+		props: ['tricorder', 'phaser', 'cloaking device', 'dilithium crystal', 'Borg technology', 'the Sacred Chalice of Rixx'],
 		fuckingWat: false
 	}), Ember.Object.create({
 		name: "Muppet Babies",
@@ -63,7 +63,7 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['The Doctor', 'Strax', 'River Song', 'The Master', 'Davros', 'Clara', 'Rory Willimas'],
 		locations: ['Earth', 'TARDIS', 'Gallifrey', 'E-Space', 'Mondas'],
-		props: ['sonic screw driver', 'TARDIS', 'Dalekanium', 'psychic paper'],
+		props: ['sonic screw driver', 'TARDIS', 'Dalekanium', 'psychic paper', 'timey-wimey stuff'],
 		fuckingWat: false
 	}), Ember.Object.create({
 		name: "Winnie-the-Pooh",
@@ -86,7 +86,7 @@ App.Worlds = Em.A([
 		medium: 'book',
 		characters: ['Harry Potter', 'Hagrid', 'Snape', 'Dobby', 'Petunia Dursley', 'Moaning Myrtle', 'Voldemort'],
 		locations: ["Diagon Alley", "Hogwartz", "Privet Drive", "The Ministry of Magic", "The Chamber of Secrets"],
-		props: ['the snitch', "a horcrux", "the invisibility cloak", "the elder wand", "the Whomping Willow", "a Nimbus 2000"],
+		props: ['the snitch', "a horcrux", "the invisibility cloak", "the elder wand", "the Whomping Willow", "Nimbus 2000"],
 		fuckingWat: false
 	}),
 	Ember.Object.create({
@@ -98,7 +98,8 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['Derek', 'Scott', 'Styles', 'The Sheriff', 'Lydia', 'Chris Argent', 'Peter', 'Danny', 'Jackson', 'Malia'],
 		locations: ["Derek's Loft", 'Beacon Hills', 'the vetrinary clinic', 'Mexico'],
-		props: ['wolfsbane', "derek's eyebrows", "mistletoe", 'mountain ash', 'a banshee']
+		props: ['wolfsbane', "Derek's eyebrows", "mistletoe", 'mountain ash', 'a banshee'],
+		fuckingWat: false
 	}),
 	Ember.Object.create({
 		name: "Shrek",
@@ -109,7 +110,8 @@ App.Worlds = Em.A([
 		medium: 'movie',
 		characters: ['Shrek', 'Fiona', 'Donkey', 'Lord Farquad', 'The Gingerbread Man', 'Fairy Godmother', 'The First blind Mouse'],
 		locations: ["Shrek's Swamp", 'Far Far Away Land', 'a Giant Tower'],
-		props: ['a magic potion', 'gumdrop buttons', "true love's kiss"]
+		props: ['a magic potion', 'gumdrop buttons', "true love's kiss"],
+		fuckingWat: true
 	}),
 	Ember.Object.create({
 		name: 'Avatar the Last Airbender',
@@ -120,7 +122,8 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['Aang', 'Katara', 'Sokka', 'Toph', 'Zuko', 'Uncle Iroh', 'Appa', 'Momo', 'Azula', 'The Cabbage Vendor'],
 		locations: ['The North Pole', 'Ba Sing Se', 'Kyoshi Island', 'The Spirit World', 'Ember Island'],
-		props: ['a boomerang', 'a water bending scroll', 'jasmine tea', 'cabbages']
+		props: ['a boomerang', 'a water bending scroll', 'jasmine tea', 'cabbages'],
+		fuckingWat: false
 	}),
 	Ember.Object.create({
 		name: 'Daria',
@@ -131,7 +134,8 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['Daria', 'Jane', 'Trent', 'Quinn', 'Helen', 'Up-chuck', 'Jake', 'Kevin', 'Brittany', 'Jodie'],
 		locations: ['Lawndale High', 'Cashmans', 'The Mall', 'Pizza King'],
-		props: ['an issue of sick sad world', 'Ultra Cola', 'pizza', 'self esteem']
+		props: ['an issue of sick sad world', 'Ultra Cola', 'pizza', 'self esteem'],
+		fuckingWat: true
 	}),
 	Ember.Object.create({
 		name: 'Glee',
@@ -142,7 +146,8 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['Finn', 'Rachel', 'Quinn', 'Santana', 'Sam', 'Brittany', 'Artie', 'Kurt', 'Mr. Schue', 'Sue Sylvester'],
 		locations: ['The Choir Room', 'The Football Field', 'The Gym', 'Matress Land'],
-		props: ['a slushie', "artie's wheelchair", "Sue's Journal", 'a musical number']
+		props: ['a slushie', "Artie's wheelchair", "Sue's Journal", 'a musical number'],
+		fuckingWat: false
 	}),
 	Ember.Object.create({
 		name: 'Sherlock',
@@ -153,7 +158,8 @@ App.Worlds = Em.A([
 		medium: 'tv',
 		characters: ['Sherlock Holmes', 'Dr. Watson', 'Jim Moriarty', 'Mycroft', 'Mrs. Hudson', 'Irene Adler'],
 		locations: ['London', 'New Scotland Yard', '221B Baker Street', "Speedy's Cafe", "St. Bart's Hospital"],
-		props: ['Deerstalker Hat', 'Mind Palace', 'intuition', "Watson's Blog", "a magnifying glass"]
+		props: ['Deerstalker Hat', 'Mind Palace', 'intuition', "Watson's Blog", "a magnifying glass"],
+		fuckingWat: false
 	}),
 	Ember.Object.create({
 		name: 'Stargate: SG-1',
@@ -162,9 +168,10 @@ App.Worlds = Em.A([
 		weirdness: 0.17,
 		genre: ['sci-fi'],
 		medium: 'tv',
-		characters: ["Jack O'Neill", "Teal'c", "Samantha Carter", "Daniel Jackson", " Janet Fraiser", "Apophis"],
+		characters: ["Jack O'Neill", "Teal'c", "Samantha Carter", "Daniel Jackson", "Dr. Janet Fraiser", "Apophis"],
 		locations: ['Pegasus Galaxy', "Othala", "Goa'uld Pleasure Palace", "Abydos", "Cheyenne Mountain Complex", "the Stargate Control Room"],
-		props: ['Naqahdah', 'Zero Point Module', "a Goa'uld symbiote", "a Sarcophagus", "another Stargate"]
+		props: ['Naqahdah', 'Zero Point Module', "a Goa'uld symbiote", "a Sarcophagus", "another Stargate"],
+		fuckingWat: false
 	}),
 	Ember.Object.create({
 		"name": "Teenage Mutant Ninja Turtles",
