@@ -288,7 +288,18 @@ App.Worlds = Em.A([
 		locations: ["Mt. Doom", "Mordor", "Bagend", "Rivendell", "Khazad-dum", "Barad-dûr", "The Black Gate", "The Shire"],
 		props: ["The One Ring", "Anduril", "the Shards of Narsil", "palantir", "Ents", "Potatos, PO-TAY-TOES", 'Sting', "Mithril", "Horn of Helm Hammerhand"],
 		fuckingWat: false
-	}),
+	}), Ember.Object.create({
+		name: 'Chrono Trigger',
+		google: 2290000,
+		popularity: 70,
+		weirdness: 0.5,
+		genre: ['sci-fi', 'fantasy'],
+		medium: 'game',
+		characters: ["Chrono", "Luca", "Frog", "Robo", "Lavos", "Magus", "Queen Zeal", "Ozzie", "Flea", "Cyrus", "Gaspar", "Spekkio"],
+		locations: ["the End of Time", , "Guardia Castle", "Death Peak", "Ocean Palace", "1999 A.D.", "the Millennial Fair"],
+		props: ["Time Egg", "Rainbow Shell", "Epoch", "Gate Key", "Luminaire", "Triple-Tech", "Gato", "Masamune", "time warps"],
+		fuckingWat: false
+	})
 
 
 
